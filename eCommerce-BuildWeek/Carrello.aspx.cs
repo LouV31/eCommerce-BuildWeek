@@ -9,7 +9,7 @@ namespace eCommerce_BuildWeek
         protected void Page_Load(object sender, EventArgs e)
         {
             List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
-            if (Session["carrello"] != null && carrello.Count > 0)
+            if (carrello != null && carrello.Count > 0)
             {
                 alert.Style.Add("display", "none");
 
@@ -17,7 +17,6 @@ namespace eCommerce_BuildWeek
                 Repeater2.DataBind();
 
                 CalcoloTotale(carrello);
-
             }
             else
             {

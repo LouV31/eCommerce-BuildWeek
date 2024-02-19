@@ -10,16 +10,20 @@
         <asp:Repeater ID="Repeater1" runat="server" >
             <ItemTemplate>
                 <div class="col gy-3">
-
                     <div class="card mx-2 my-2 bg-white text-white border border-dark border-2 overflow-hidden">
-                        <img src='<%# Eval("Immagine") %>' class="card-img-top img-fluid" style="max-height: 250px; object-fit: contain" alt='<%# Eval("Nome") %>'>
-                        <div class="card-body bg-dark">
-                            <h5 class="card-title fw-semibold"><%# Eval("Nome") %></h5>
-                            <p class="card-text"><%# Eval("Prezzo", "{0:c2}") %></p>
-                            <a href='<%# "Dettagli.aspx?IdProdotto=" + Eval("idProdotto") %>' class="btn btn-sm btn-secondary">Dettagli</a>
-                            <asp:Button ID="aggiungiCarrello" runat="server" OnClick="aggiungiCarrello_Click" Text="Acquista" CssClass="btn btn-sm btn-success" CommandArgument='<%# Eval("idProdotto") %>' />
-                        </div>
+                        <a href="<%# "Dettagli.aspx?IdProdotto=" + Eval("idProdotto") %>" class="text-decoration-none text-white">
+
+
+                            <img src='<%# Eval("Immagine") %>' class="card-img-top img-fluid" style="max-height: 250px; object-fit: contain" alt='<%# Eval("Nome") %>'>
+                            <div class="card-body bg-dark">
+                                <h5 class="card-title fw-semibold"><%# Eval("Nome") %></h5>
+                                <p class="card-text"><%# Eval("Prezzo", "{0:c2}") %></p>
+
+                        
+                            </div>
+                        </a>
                     </div>
+
                 </div>
             </ItemTemplate>
         </asp:Repeater>

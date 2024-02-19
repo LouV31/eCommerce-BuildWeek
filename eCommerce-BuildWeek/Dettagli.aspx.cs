@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace eCommerce_BuildWeek
@@ -47,6 +48,57 @@ namespace eCommerce_BuildWeek
             finally
             {
                 conn.Close();
+            }
+        }
+
+        protected void aggiungiCarrello_Click(object sender, EventArgs e)
+        {
+
+
+
+            SqlConnection conn = Connection.ConnectionString();
+            try
+            {
+                if (!string.IsNullOrEmpty(Request.QueryString["IdProdotto"]))
+                {
+                    int id = Convert.ToInt32(Request.QueryString["IdProdotto"]);
+                    conn.Open();
+                    string query = $"SELECT * FROM Prodotti WHERE idProdotto = {id}";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        Prodotti prodotto = new Prodotti(Convert.ToInt32(reader["idProdotto"]), reader["Nome"].ToString(), reader["Descrizione"].ToString(), Convert.ToDouble(reader["Prezzo"]), Convert.ToInt32(reader["Unita"]), reader["Categoria"].ToString(), reader["Immagine"].ToString());
+                        List<Prodotti> carrello;
+                        if (Session["carrello"] == null)
+                        {
+                            carrello = new List<Prodotti>();
+                        }
+                        else
+                        {
+                            carrello = (List<Prodotti>)Session["carrello"];
+                        }
+                        carrello.Add(prodotto);
+                        Session["carrello"] = carrello;
+                        Response.Redirect(Request.RawUrl);
+
+                    }
+                }
+                else
+                {
+                    Response.Write("Prodotto non trovato");
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Error: ");
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+
             }
         }
     }
