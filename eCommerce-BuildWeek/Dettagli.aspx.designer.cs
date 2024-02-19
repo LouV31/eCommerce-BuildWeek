@@ -11,34 +11,52 @@ namespace eCommerce_BuildWeek
 {
 
 
-    public partial class SiteMaster
+    public partial class Dettagli
     {
 
         /// <summary>
-        /// Controllo badge.
+        /// Controllo alert.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl badge;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
 
         /// <summary>
-        /// Controllo carrelloCount.
+        /// Controllo Immagine.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label carrelloCount;
+        protected global::System.Web.UI.HtmlControls.HtmlImage Immagine;
 
         /// <summary>
-        /// Controllo MainContent.
+        /// Controllo Nome.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Nome;
+
+        /// <summary>
+        /// Controllo Descrizione.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Descrizione;
+
+        /// <summary>
+        /// Controllo Prezzo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prezzo;
     }
 }
