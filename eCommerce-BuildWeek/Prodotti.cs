@@ -13,21 +13,21 @@ namespace eCommerce_BuildWeek
         private double prezzo;
         public double Prezzo { get => prezzo; set => prezzo = value; }
         private int unita;
-        public int Unita { get => Unita; set => Unita = value; }
+        public int Unita { get => unita; set => unita = value; }
         private string categoria;
-        public string Categoria { get => Categoria; set => Categoria = value; }
+        public string Categoria { get => categoria; set => categoria = value; }
         private string immagine;
-        public string Immagine { get => Immagine; set => Immagine = value; }
+        public string Immagine { get => immagine; set => immagine = value; }
 
         private static List<Prodotti> ListaProdotti = new List<Prodotti>();
         public static List<Prodotti> GetProdotti()
         {
             return ListaProdotti;
         }
-        public static void AggiungiProdotto(Prodotti prodotto)
+        /*public static void AggiungiProdotto(Prodotti prodotto)
         {
             ListaProdotti.Add(prodotto);
-        }
+        }*/
         public static void RimuoviProdotto(Prodotti prodotto)
         {
             ListaProdotti.Remove(prodotto);
