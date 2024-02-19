@@ -26,7 +26,24 @@ namespace eCommerce_BuildWeek
                         Immagine.Src = reader["Immagine"].ToString();
                         Nome.InnerHtml = reader["Nome"].ToString();
                         Descrizione.InnerHtml = reader["Descrizione"].ToString();
-                        Prezzo.InnerHtml = reader["Prezzo"].ToString();
+                        // aggiunto euro convertito per leggere solo 2 decimali
+                        Prezzo.InnerHtml = "€" + Convert.ToDouble(reader["Prezzo"]).ToString("0.00");
+
+
+                        // aggiunto if per la disponibilità
+                        if (Convert.ToInt32(reader["Unita"]) > 0)
+                        {
+                            Disponibilita.InnerHtml = "Disponibile";
+                            Disponibilita.Style.Add("color", "green");
+                        }
+                        else
+                        {
+                            Disponibilita.InnerHtml = "Non disponibile";
+                            Disponibilita.Style.Add("color", "red");
+                        }
+
+                        //categoria
+                        Categoria.InnerHtml = reader["Categoria"].ToString();
                     }
                     else
                     {
