@@ -23,7 +23,11 @@
                      <h4 id="Nome" runat="server"></h4>
                      <p class="fw-normal fs-5 mb-2" id="Descrizione" runat="server"></p>
                      <p class="fw-semibold fs-6 mb-0" id="Prezzo" runat="server"></p>
-                     <asp:Button runat="server" id="aggiungiCarrello" OnClick="aggiungiCarrello_Click" cssClass="btn btn-success rounded-pill" Text="Aggiungi al carrello"/>
+                     <asp:Button runat="server" ID="aggiungiCarrello" OnClick="aggiungiCarrello_Click" CssClass="btn btn-success rounded-pill" Text="Aggiungi al carrello" />
+
+
+                     <asp:TextBox runat="server" ID="Quantità" TextMode="Number" Text="1" />
+
                  </div>
              </div>
 

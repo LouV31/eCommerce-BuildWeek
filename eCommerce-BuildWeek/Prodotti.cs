@@ -14,6 +14,9 @@ namespace eCommerce_BuildWeek
         public double Prezzo { get => prezzo; set => prezzo = value; }
         private int unita;
         public int Unita { get => unita; set => unita = value; }
+
+        private int quantità = 0;
+        public int Quantità { get => quantità; set => quantità = value; }
         private string categoria;
         public string Categoria { get => categoria; set => categoria = value; }
         private string immagine;

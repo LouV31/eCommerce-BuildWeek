@@ -13,6 +13,8 @@ namespace eCommerce_BuildWeek
             {
                 alert.Style.Add("display", "none");
 
+
+
                 Repeater2.DataSource = carrello;
                 Repeater2.DataBind();
 

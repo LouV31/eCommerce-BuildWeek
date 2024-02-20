@@ -53,9 +53,6 @@ namespace eCommerce_BuildWeek
 
         protected void aggiungiCarrello_Click(object sender, EventArgs e)
         {
-
-
-
             SqlConnection conn = Connection.ConnectionString();
             try
             {
@@ -69,6 +66,8 @@ namespace eCommerce_BuildWeek
 
                     if (reader.Read())
                     {
+                        int quantità = Convert.ToInt32(Quantità.Text);
+
                         Prodotti prodotto = new Prodotti(Convert.ToInt32(reader["idProdotto"]), reader["Nome"].ToString(), reader["Descrizione"].ToString(), Convert.ToDouble(reader["Prezzo"]), Convert.ToInt32(reader["Unita"]), reader["Categoria"].ToString(), reader["Immagine"].ToString());
                         List<Prodotti> carrello;
                         if (Session["carrello"] == null)
@@ -79,10 +78,15 @@ namespace eCommerce_BuildWeek
                         {
                             carrello = (List<Prodotti>)Session["carrello"];
                         }
-                        carrello.Add(prodotto);
+
+
+                        for (int i = 0; i < quantità; i++)
+                        {
+                            carrello.Add(prodotto);
+                        }
+
                         Session["carrello"] = carrello;
                         Response.Redirect(Request.RawUrl);
-
                     }
                 }
                 else
@@ -98,7 +102,6 @@ namespace eCommerce_BuildWeek
             finally
             {
                 conn.Close();
-
             }
         }
     }

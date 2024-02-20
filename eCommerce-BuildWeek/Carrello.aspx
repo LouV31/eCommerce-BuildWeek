@@ -26,7 +26,7 @@
                         <p class="fw-normal fs-5 mb-0"  >Descrizione: <%# Eval("Descrizione") %></p>
 
                     </div>
-                    <p runat="server" id="quantita" class="mb-0"></p>
+                    <p runat="server" id="n_prodotti" class="mb-0"><%# Eval("Quantità") %></p>
                     <p class="fw-semibold fs-6 mb-0"  >Prezzo: <%# Eval("Prezzo", "{0:c2}") %></p>
                     <asp:Button ID="rimuoviCarrello" runat="server" OnClick="rimuoviCarrello_Click" Text="Rimuovi" CssClass="btn btn-sm btn-success" CommandArgument='<%# Eval("Id") %>'/>
 
