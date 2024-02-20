@@ -95,3 +95,19 @@ h4 {
 .img-thumbnail {
     filter: drop-shadow(9px 4px 4px #000000) !important;
 }
+
+
+.form-control {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.form-control::placeholder { 
+ color: black;
+ font-family: 'Poppins', sans-serif;
+ opacity: 1;
+ font-weight: 600;
+}
+
