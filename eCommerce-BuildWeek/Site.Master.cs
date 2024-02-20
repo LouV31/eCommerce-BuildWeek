@@ -29,7 +29,7 @@ namespace eCommerce_BuildWeek
                 {
                     login.Style.Add("display", "none");
                     pannelloUtente.Style.Add("display", "flex");
-                    benvenuto.InnerHtml = "Benvenuto " + nome;
+                    benvenuto.InnerHtml = "Ciao, " + nome;
 
                 }
 
