@@ -100,6 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="backOffice.aspx" />
     <Content Include="Carrello.aspx" />
     <Content Include="Content\assets\Immagine_1.jpg" />
     <Content Include="Content\assets\Immagine_2.jpg" />
@@ -126,6 +127,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="Modifica.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -191,6 +193,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="backOffice.aspx.cs">
+      <DependentUpon>backOffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backOffice.aspx.designer.cs">
+      <DependentUpon>backOffice.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Carrello.aspx.cs">
       <DependentUpon>Carrello.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,6 +231,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modifica.aspx.cs">
+      <DependentUpon>Modifica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modifica.aspx.designer.cs">
+      <DependentUpon>Modifica.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>

@@ -24,13 +24,20 @@ namespace eCommerce_BuildWeek
 
                 login.Style.Add("display", "flex");
                 pannelloUtente.Style.Add("display", "none");
+                backOffice.Style.Add("display", "none");
                 string nome = (string)Session["nome"];
+                string isAdmin = (string)Session["isAdmin"];
                 if (!string.IsNullOrEmpty(nome))
                 {
                     login.Style.Add("display", "none");
                     pannelloUtente.Style.Add("display", "flex");
                     benvenuto.InnerHtml = "Benvenuto " + nome;
 
+                    if (isAdmin == "True")
+                    {
+                        backOffice.Style.Add("display", "block");
+
+                    }
                 }
 
             }

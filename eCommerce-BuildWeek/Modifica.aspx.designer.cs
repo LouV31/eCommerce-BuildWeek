@@ -11,79 +11,79 @@ namespace eCommerce_BuildWeek
 {
 
 
-    public partial class SiteMaster
+    public partial class Modifica
     {
 
         /// <summary>
-        /// Controllo backOffice.
+        /// Controllo img.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor backOffice;
+        protected global::System.Web.UI.WebControls.Image img;
 
         /// <summary>
-        /// Controllo badge.
+        /// Controllo Nome.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl badge;
+        protected global::System.Web.UI.WebControls.TextBox Nome;
 
         /// <summary>
-        /// Controllo carrelloCount.
+        /// Controllo Descrizione.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label carrelloCount;
+        protected global::System.Web.UI.WebControls.TextBox Descrizione;
 
         /// <summary>
-        /// Controllo login.
+        /// Controllo Prezzo.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor login;
+        protected global::System.Web.UI.WebControls.TextBox Prezzo;
 
         /// <summary>
-        /// Controllo pannelloUtente.
+        /// Controllo Unita.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pannelloUtente;
+        protected global::System.Web.UI.WebControls.TextBox Unita;
 
         /// <summary>
-        /// Controllo benvenuto.
+        /// Controllo Categoria.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl benvenuto;
+        protected global::System.Web.UI.WebControls.TextBox Categoria;
 
         /// <summary>
-        /// Controllo logout.
+        /// Controllo Immagine.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout;
+        protected global::System.Web.UI.WebControls.TextBox Immagine;
 
         /// <summary>
-        /// Controllo MainContent.
+        /// Controllo invioModifica.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button invioModifica;
     }
 }

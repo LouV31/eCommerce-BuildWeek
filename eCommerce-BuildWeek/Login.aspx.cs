@@ -30,6 +30,7 @@ namespace eCommerce_BuildWeek
                     Session["email"] = reader["Email"].ToString();
                     Session["password"] = reader["Password"].ToString();
                     Session["nome"] = reader["Nome"].ToString();
+                    Session["isAdmin"] = reader["Admin"].ToString();
 
                     Response.Redirect("Default");
                 }
