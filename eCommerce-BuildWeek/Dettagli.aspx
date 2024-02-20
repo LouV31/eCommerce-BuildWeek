@@ -31,6 +31,8 @@ Inherits="eCommerce_BuildWeek.Dettagli" EnableEventValidation="false" %>
             <p id="Descrizione" runat="server"></p>
 
             <h4 class="my-4 fw-bold fs-5">Scegli una <span class="orange">mimetica</span></h4>
+
+             <div class="mb-3">
             <img
               class="material rounded-1 border border-2 border-white"
               src="https://www.onlygfx.com/wp-content/uploads/2019/09/4-black-camouflage-texture-tile-2.png"
@@ -51,16 +53,24 @@ Inherits="eCommerce_BuildWeek.Dettagli" EnableEventValidation="false" %>
               src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-gold-background-material-picture-png-image_4362781.jpg"
               alt=""
             />
+            </div>
+
+
             <br />
+
+            <div class="d-flex">
             <asp:Button
               runat="server"
               id="aggiungiCarrello"
               OnClick="aggiungiCarrello_Click"
-              cssClass="mt-4 py-3 px-4 btn btn2o fw-bolder"
+              cssClass="py-3 px-4 btn btn2o fw-bolder"
               Text="Aggiungi al carrello"
             />
 
-            <asp:TextBox runat="server" ID="Quantità" TextMode="Number" Text="1" />
+            <asp:TextBox runat="server" ID="Quantità" CssClass="textBox ms-3 fw-bold" TextMode="Number" Text="1" />
+            </div>
+
+
           </div>
         </div>
       </div>
