@@ -33,6 +33,15 @@ namespace eCommerce_BuildWeek
         protected global::System.Web.UI.HtmlControls.HtmlImage Immagine;
 
         /// <summary>
+        /// Controllo Categoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Categoria;
+
+        /// <summary>
         /// Controllo Nome.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,13 @@ namespace eCommerce_BuildWeek
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Nome;
 
         /// <summary>
-        /// Controllo Descrizione.
+        /// Controllo Disponibilita.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Descrizione;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Disponibilita;
 
         /// <summary>
         /// Controllo Prezzo.
@@ -58,6 +67,15 @@ namespace eCommerce_BuildWeek
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prezzo;
+
+        /// <summary>
+        /// Controllo Descrizione.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Descrizione;
 
         /// <summary>
         /// Controllo aggiungiCarrello.
