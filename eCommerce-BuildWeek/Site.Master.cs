@@ -22,7 +22,25 @@ namespace eCommerce_BuildWeek
                     badge.Style.Add("display", "none");
                 }
 
+                login.Style.Add("display", "flex");
+                pannelloUtente.Style.Add("display", "none");
+                string nome = (string)Session["nome"];
+                if (!string.IsNullOrEmpty(nome))
+                {
+                    login.Style.Add("display", "none");
+                    pannelloUtente.Style.Add("display", "flex");
+                    benvenuto.InnerHtml = "Benvenuto " + nome;
+
+                }
+
             }
+
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect(Request.RawUrl);
         }
     }
 }
