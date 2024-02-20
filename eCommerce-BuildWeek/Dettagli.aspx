@@ -27,16 +27,16 @@
                     </div>
 
                      <h4 id="Prezzo" runat="server"></h4>
-                     <h4 class="my-4 fw-bold fs-5">Descrizione</h4>
+                     <h4 class="my-4 fw-bold fs-5 orange">Descrizione</h4>
                      <p  id="Descrizione" runat="server"></p>
 
-                 <h4 class="my-4 fw-bold fs-5">Scegli una mimetica</h4>
+                 <h4 class="my-4 fw-bold fs-5">Scegli una <span class="orange">mimetica</span></h4>
                   <img class="material rounded-1 border border-2 border-white" src="https://www.onlygfx.com/wp-content/uploads/2019/09/4-black-camouflage-texture-tile-2.png" alt="" />
                   <img class="material rounded-1" src="https://www.onlygfx.com/wp-content/uploads/2019/09/4-red-camouflage-texture-tile-3.png" alt="" />
                   <img class="material rounded-1" src="https://w7.pngwing.com/pngs/358/712/png-transparent-metal-silver-silver-textured-metal-silver-textured-thumbnail.png" alt="" />
                   <img class="material rounded-1" src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-gold-background-material-picture-png-image_4362781.jpg" alt="" />
                  <br/>
-                     <asp:Button runat="server" id="aggiungiCarrello" OnClick="aggiungiCarrello_Click" cssClass="mt-4 add-to-cart btn btn-dark rounded-0 py-3 px-4 border-0 fw-bolder" Text="Aggiungi al carrello"/>
+                     <asp:Button runat="server" id="aggiungiCarrello" OnClick="aggiungiCarrello_Click" cssClass="mt-4 py-3 px-4 btn btn2o fw-bolder" Text="Aggiungi al carrello"/>
             </div>
 
          </div>
