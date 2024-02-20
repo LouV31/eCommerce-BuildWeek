@@ -23,7 +23,7 @@ namespace eCommerce_BuildWeek
             else
             {
                 alert.Style.Add("display", "block");
-                alert.InnerHtml = "Carrello vuoto";
+                alert.InnerHtml = "Nessun articolo nel carrello";
             }
         }
 
@@ -47,8 +47,19 @@ namespace eCommerce_BuildWeek
             foreach (Prodotti prodotto in carrello)
             {
                 Totale += prodotto.Prezzo;
-                contoTotale.InnerHtml = "Totale: " + Totale + "€";
+
+                // controllo articoli > 1
+
+                contoTotale.InnerHtml = "Totale provvisorio: " + Totale.ToString("0.00") + "€";
+
+                if (carrello.Count > 1)
+                    contoTotale.InnerHtml += " (" + carrello.Count + " articoli)";
+                else
+                    contoTotale.InnerHtml += " (" + carrello.Count + " articolo)";
+
             }
+
+            procediOrdine.Visible = true;
         }
     }
 }

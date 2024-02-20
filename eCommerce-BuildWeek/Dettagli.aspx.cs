@@ -9,7 +9,6 @@ namespace eCommerce_BuildWeek
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection conn = Connection.ConnectionString();
-            Response.Write(Request.QueryString["IdProdotto"]);
             try
             {
                 conn.Open();

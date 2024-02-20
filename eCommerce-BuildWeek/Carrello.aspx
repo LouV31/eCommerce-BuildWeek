@@ -10,36 +10,57 @@
 </head>
 <body>
         <div class="container">
-    <p class="alert alert-primary text-success" runat="server" id="alert"></p>
-<div class="row row-cols-1">
+    <p class="alert custom-alert text-center title-up" runat="server" id="alert"></p>
 
-    <asp:Repeater ID="Repeater2" runat="server">
-        <ItemTemplate>
-            <div class="col gy-3 border-bottom border-2 pb-2">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div>
-                        <img src='<%# Eval("immagine") %>' class="card-img-top img-fluid" style="max-height: 250px; object-fit: contain" alt='<%# Eval("Nome") %>'>
+
+            <asp:Repeater ID="Repeater2" runat="server">
+                <ItemTemplate>
+                    <div class="row border border-1 border-secondary border-start-0 border-end-0 border-top-0 mb-3">
+                        <div class="col-7">
+                            <img src='<%# Eval("immagine") %>' class="card-img-top img-fluid" style="max-height: 250px; object-fit: contain" alt='<%# Eval("Nome") %>'>
+                        </div>
+
+                        <div class="col-5">
+
+                         <div class="d-flex justify-content-between align-items-end">
+                            <h5 class="card-title title-up fs-1"><%# Eval("Nome") %></h5>
+                            <p class="fw-semibold fs-6 mb-0"><%# Eval("Prezzo", "{0:c2}") %></p>
+                         </div>
+
+                            
+                            <span class="badge p-0 text-success" id="Disponibilita" runat="server">Disponibilità immediata</span>
+                            <h2 class="fs-6 mt-3 mb-0 pb-0">Descrizione:</h2>
+                            <p class="card-text mt-0 pt-0 text-truncate"><%# Eval("Descrizione") %></p>
+
+
+                        <div class="d-flex">
+                            <p class="fw-semibold fs-6 mb-0 d-flex align-items-end">Q.tà:
+                                <asp:TextBox ID="quantita" runat="server" Text='<%# Eval("Quantità") %>' CssClass="ms-2 " Width="30px" ReadOnly="true" /></p>
+                            <%--<p runat="server" id="n_prodotti" class="mb-0"><%# Eval("Quantità") %></p>--%>
+                            <asp:Button ID="rimuoviCarrello" runat="server" OnClick="rimuoviCarrello_Click" Text="Rimuovi" CssClass="btn2q ms-2 btn title-up text-white" CommandArgument='<%# Eval("Id") %>' />
+                            <asp:Button runat="server" Text="Salva per dopo" CssClass="ms-2 btn btn btn2w title-up text-white" CommandArgument='<%# Eval("Id") %>' />
+                        </div>
+                        
+                        </div>
+
+
+
                     </div>
-                  
-                    <div class="d-flex flex-column">
-                        <h5 class="card-title fw-semibold mb-2">Prodotto: <%# Eval("Nome") %></h5>
-                        <p class="fw-normal fs-5 mb-0"  >Descrizione: <%# Eval("Descrizione") %></p>
+                </ItemTemplate>
+            </asp:Repeater>
 
-                    </div>
-                    <p runat="server" id="n_prodotti" class="mb-0"><%# Eval("Quantità") %></p>
-                    <p class="fw-semibold fs-6 mb-0"  >Prezzo: <%# Eval("Prezzo", "{0:c2}") %></p>
-                    <asp:Button ID="rimuoviCarrello" runat="server" OnClick="rimuoviCarrello_Click" Text="Rimuovi" CssClass="btn btn-sm btn-success" CommandArgument='<%# Eval("Id") %>'/>
 
-                </div>
-                
-                       
-                               
-            </div>
-        </ItemTemplate>
-    </asp:Repeater>
-    <hr />
-    <p runat="server" id="contoTotale" class="text-end mb-0">Totale: 0€</p>
+<div class="d-flex flex-column align-items-end">
+    <p runat="server" id="contoTotale" class="text-end mb-0"></p>
+    <asp:Button  id="procediOrdine" runat="server" Text="Procedi all'acquisto" Visible="false" CssClass="p-3 mt-2 btn btn btn2o title-up text-white"/>
+</div>
 </div>
 </body>
 </html>
 </asp:Content>
+
+ 
+
+
+
+
