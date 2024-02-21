@@ -32,7 +32,12 @@ namespace eCommerce_BuildWeek
                     {
                         conn2.Open();
 
+                        if (TextName.Text == "" || TextName.Text == "" || TextEmail.Text == "" || TextPassword.Text == "")
+                        {
+                            alert.Style.Add("display", "block");
+                            alert.InnerHtml = "I seguenti campi sono obbligatori: Nome, Cognome, Email, Password";
 
+                        }
 
                         string query2 = $"INSERT INTO Utenti(Nome, Cognome, Email, Password, Indirizzo, Citta, Cap) VALUES('{TextName.Text}', '{TextCognome.Text}', '{TextEmail.Text}', '{TextPassword.Text}', '{TextInirizzo.Text}', '{TextCittà.Text}', '{TextCap.Text}'); ";
                         SqlCommand cmd2 = new SqlCommand(query2, conn2);

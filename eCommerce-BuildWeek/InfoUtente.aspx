@@ -33,10 +33,10 @@
                     <ItemTemplate>
                         <div class="d-flex">
                             <div class="col-8">
-                                <asp:Label ID="idOrdine" runat="server" />
-                                <asp:Label ID="Totale" runat="server" />
-                                <asp:Label ID="indirizzoSpedizione" runat="server" />
-                                
+                                <asp:Label Text='<%# Eval("idOrdine") %>' runat="server" />
+                                <asp:Label Text='<%# Eval("Indirizzo_Spedizione") %>' ID="indirizzoSpedizione" runat="server" />
+                                <asp:Label Text='<%# Eval("Quantita") %>' ID="Quantità" runat="server" />
+                                <asp:Label Text='<%# Eval("Totale") %>' ID="Totale" runat="server" />
                             </div>
                             
                         </div>

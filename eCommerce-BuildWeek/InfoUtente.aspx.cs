@@ -50,8 +50,12 @@ namespace eCommerce_BuildWeek
                 try
                 {
                     ordiniConnection.Open();
-                    //string query = $"SELECT "
+                    string query = $"SELECT O.idOrdine, O.Indirizzo_Spedizione, SUM(P.Prezzo) AS Totale, COUNT(D.Quantita) AS Quantita FROM Ordini AS O JOIN DettagliOrdini AS D ON O.idOrdine = D.FK_IdOrdine JOIN Prodotti AS P ON D.FK_IdProdotto = P.idProdotto WHERE O.FK_IdUtente = {idUtente} GROUP BY O.idOrdine, O.Indirizzo_Spedizione ";
+                    SqlCommand cmd = new SqlCommand(query, ordiniConnection);
+                    SqlDataReader reader = cmd.ExecuteReader();
 
+                    RiepilodoOrdiniRep.DataSource = reader;
+                    RiepilodoOrdiniRep.DataBind();
                 }
                 catch (Exception ex)
                 {

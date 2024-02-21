@@ -74,21 +74,22 @@ namespace eCommerce_BuildWeek
                 try
                 {
                     conn.Open();
-                    string query = $"Insert into Ordini (FK_IdUtente, Indirizzo_Spedizione, Totale) VALUES ( '{idUtente}', '{indirizzo}', '{totale}')";
+                    string query = "Insert into Ordini (FK_IdUtente, Indirizzo_Spedizione, Totale) VALUES (@idUtente, @indirizzo, @totale)";
                     SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@idUtente", idUtente);
+                    cmd.Parameters.AddWithValue("@indirizzo", indirizzo);
+                    cmd.Parameters.AddWithValue("@totale", totale);
                     cmd.ExecuteNonQuery();
                     SqlConnection conn2 = Connection.ConnectionString();
                     try
                     {
                         conn2.Open();
-                        string idOrdineQuery = $"SELECT idOrdine FROM Ordini WHERE FK_IdUtente = '{idUtente}'";
+                        string idOrdineQuery = $"SELECT idOrdine FROM Ordini WHERE FK_IdUtente = {idUtente} ORDER BY idOrdine DESC";
                         SqlCommand getIdOrdineCmd = new SqlCommand(idOrdineQuery, conn2);
                         int idOrdine = (int)getIdOrdineCmd.ExecuteScalar();
                         foreach (Prodotti prodotto in carrello)
                         {
-
-
-                            string query2 = $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto) VALUES ( '{idOrdine}', '{prodotto.Id}')";
+                            string query2 = $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto, Quantita) VALUES ( {idOrdine}, {prodotto.Id}, 1)";
                             SqlCommand cmd2 = new SqlCommand(query2, conn2);
                             cmd2.ExecuteNonQuery();
                         }
