@@ -35,6 +35,7 @@ namespace eCommerce_BuildWeek
                             Unita.Text = reader["Unita"].ToString();
                             Categoria.Text = reader["Categoria"].ToString();
                             Immagine.Text = reader["Immagine"].ToString();
+
                         }
                     }
                     catch (Exception ex)
