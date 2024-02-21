@@ -1,20 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Modifica.aspx.cs" Inherits="eCommerce_BuildWeek.Modifica" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Aggiungi.aspx.cs" Inherits="eCommerce_BuildWeek.Aggiungi" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Modifica</h2>
 
 
     <div class="d-flex justify-content-center">
         <div class="text-end">
-
-            
-
-            <div class="d-flex justify-content-end mb-2">
-    <asp:Image ID="img" ImageUrl="imageurl" runat="server" CssClass="" Width="100" />
-</div>
-
-            <p runat="server" class="text-warning small">id: <span id="codiceProdotto" runat="server" class="text-secondary"> </span></p>
-
+   
             <div class="d-flex justify-content-end mb-2">
                 <p class="text-warning small me-4 mb-0">Nome</p>
                 <asp:TextBox runat="server" ID="Nome" Text="" CssClass="form-control w-75" />
@@ -45,13 +36,12 @@
                 <asp:TextBox runat="server" ID="Immagine" Text="" CssClass="form-control w-75" />
             </div>
 
-            
-                      
 
 
-            <asp:Button runat="server" ID="invioModifica" OnClick="invioModifica_Click" CssClass="btn btn-sm btn-success w-75 mt-3" Text="Salva" />
+
+
+            <asp:Button runat="server" ID="invioAggiungi" OnClick="invioAggiungi_Click" CssClass="btn btn-sm btn-success w-75 mt-3" Text="Invia" />
 
         </div>
     </div>
-
 </asp:Content>

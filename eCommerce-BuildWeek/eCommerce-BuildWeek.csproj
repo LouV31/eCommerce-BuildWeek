@@ -100,6 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Aggiungi.aspx" />
     <Content Include="backOffice.aspx" />
     <Content Include="Carrello.aspx" />
     <Content Include="Content\assets\Immagine_1.jpg" />
@@ -191,6 +192,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aggiungi.aspx.cs">
+      <DependentUpon>Aggiungi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aggiungi.aspx.designer.cs">
+      <DependentUpon>Aggiungi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="backOffice.aspx.cs">

@@ -28,6 +28,7 @@ namespace eCommerce_BuildWeek
                         SqlDataReader reader = cmd.ExecuteReader();
                         if (reader.Read())
                         {
+                            codiceProdotto.InnerHtml = reader["idProdotto"].ToString();
                             img.ImageUrl = reader["Immagine"].ToString();
                             Nome.Text = reader["Nome"].ToString();
                             Descrizione.Text = reader["Descrizione"].ToString();

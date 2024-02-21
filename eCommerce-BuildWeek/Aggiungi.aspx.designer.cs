@@ -11,26 +11,8 @@ namespace eCommerce_BuildWeek
 {
 
 
-    public partial class Modifica
+    public partial class Aggiungi
     {
-
-        /// <summary>
-        /// Controllo img.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img;
-
-        /// <summary>
-        /// Controllo codiceProdotto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl codiceProdotto;
 
         /// <summary>
         /// Controllo Nome.
@@ -87,12 +69,12 @@ namespace eCommerce_BuildWeek
         protected global::System.Web.UI.WebControls.TextBox Immagine;
 
         /// <summary>
-        /// Controllo invioModifica.
+        /// Controllo invioAggiungi.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button invioModifica;
+        protected global::System.Web.UI.WebControls.Button invioAggiungi;
     }
 }

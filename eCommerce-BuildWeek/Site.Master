@@ -86,7 +86,7 @@
             </a>
             <div class=" align-content-center ms-4 flex-column justify-content-center" runat="server" id="pannelloUtente">
 
-                <p id="benvenuto" class="text-white m-0 p-0 title-up" runat="server"></p>
+                <p id="benvenuto" class="text-white m-0 p-0 title-up text-center" runat="server"></p>
                 <asp:Button ID="logout" class="btn p-0 m-0 text-danger title-up" runat="server" Text="-> Logout <-" OnClick="logout_Click" />
             </div>
         </div>
