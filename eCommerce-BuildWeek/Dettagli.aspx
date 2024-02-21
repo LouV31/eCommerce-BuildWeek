@@ -33,26 +33,22 @@ Inherits="eCommerce_BuildWeek.Dettagli" EnableEventValidation="false" %>
             <h4 class="my-4 fw-bold fs-5">Scegli una <span class="orange">mimetica</span></h4>
 
              <div class="mb-3">
-            <img
-              class="material rounded-1 border border-2 border-white"
-              src="https://www.onlygfx.com/wp-content/uploads/2019/09/4-black-camouflage-texture-tile-2.png"
-              alt=""
-            />
-            <img
-              class="material rounded-1"
-              src="https://www.onlygfx.com/wp-content/uploads/2019/09/4-red-camouflage-texture-tile-3.png"
-              alt=""
-            />
-            <img
-              class="material rounded-1"
-              src="https://w7.pngwing.com/pngs/358/712/png-transparent-metal-silver-silver-textured-metal-silver-textured-thumbnail.png"
-              alt=""
-            />
-            <img
-              class="material rounded-1"
-              src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-gold-background-material-picture-png-image_4362781.jpg"
-              alt=""
-            />
+<img class="material rounded-1 selezione-colore <%= Mimetica.SelectedValue == "Default" ? "bordo-selezionato" : "" %>" src="./Content/assets/default.jpg" alt="Default" data-value="Default">
+<img class="material rounded-1 selezione-colore <%= Mimetica.SelectedValue == "Silver" ? "bordo-selezionato" : "" %>" src="./Content/assets/silver.jpg" alt="Silver" data-value="Silver">
+<img class="material rounded-1 selezione-colore <%= Mimetica.SelectedValue == "Gold" ? "bordo-selezionato" : "" %>" src="./Content/assets/gold.jpg" alt="Gold" data-value="Gold">
+<img class="material rounded-1 selezione-colore <%= Mimetica.SelectedValue == "Copper" ? "bordo-selezionato" : "" %>" src="./Content/assets/copper.jpg" alt="Copper" data-value="Copper">
+
+ 
+            <asp:RadioButtonList runat="server" ID="Mimetica" AutoPostBack="true"
+                OnSelectedIndexChanged="Mimetica_SelectedIndexChanged" CssClass="d-flex d-none">
+                <asp:ListItem Value="Default" Text="Default" />
+                <asp:ListItem Value="Silver" Text="Silver" />
+                <asp:ListItem Value="Gold" Text="Gold" />
+                <asp:ListItem Value="Copper" Text="Copper" />
+            </asp:RadioButtonList>
+
+
+
             </div>
 
 
@@ -75,5 +71,26 @@ Inherits="eCommerce_BuildWeek.Dettagli" EnableEventValidation="false" %>
         </div>
       </div>
     </body>
+
+      <script>
+
+          //scriptino per far prendere alle img i valori del radio button
+
+          document.addEventListener('DOMContentLoaded', function () {
+
+
+              document.querySelectorAll('.selezione-colore').forEach(function (img) {
+                  img.addEventListener('click', function () {
+                      var value = this.getAttribute('data-value');
+                      document.querySelectorAll('#<%= Mimetica.ClientID %> input').forEach(function(radio) {
+                if (radio.value === value) {
+                    radio.checked = true;
+                    __doPostBack('<%= Mimetica.UniqueID %>', '');
+                }
+            });
+        });
+    });
+});
+      </script>
   </html>
 </asp:Content>

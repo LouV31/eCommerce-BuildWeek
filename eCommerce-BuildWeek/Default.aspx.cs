@@ -9,18 +9,40 @@ namespace eCommerce_BuildWeek
     {
 
 
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection conn = Connection.ConnectionString();
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM Prodotti";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                Repeater1.DataSource = reader;
-                Repeater1.DataBind();
+                string categoria = Request.QueryString["categoria"];
+
+
+                if (categoria == null)
+                {
+                    string query = "SELECT * FROM Prodotti";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    Repeater1.DataSource = reader;
+                    Repeater1.DataBind();
+                    return;
+                }
+
+                if (categoria != null)
+                {
+                    string query = "SELECT * FROM Prodotti WHERE Categoria = @categoria";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@categoria", categoria);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    Repeater1.DataSource = reader;
+                    Repeater1.DataBind();
+                    return;
+                }
 
             }
             catch (Exception ex)
@@ -34,6 +56,8 @@ namespace eCommerce_BuildWeek
             }
 
         }
+
+
 
 
     }

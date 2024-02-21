@@ -78,6 +78,15 @@ namespace eCommerce_BuildWeek
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Descrizione;
 
         /// <summary>
+        /// Controllo Mimetica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList Mimetica;
+
+        /// <summary>
         /// Controllo aggiungiCarrello.
         /// </summary>
         /// <remarks>

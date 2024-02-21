@@ -8,6 +8,11 @@ namespace eCommerce_BuildWeek
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Mimetica.SelectedValue = "Default";
+            }
+
             SqlConnection conn = Connection.ConnectionString();
             try
             {
@@ -120,5 +125,59 @@ namespace eCommerce_BuildWeek
                 conn.Close();
             }
         }
+
+
+
+        protected void Mimetica_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection conn = Connection.ConnectionString();
+            try
+            {
+                conn.Open();
+                if (!string.IsNullOrEmpty(Request.QueryString["IdProdotto"]))
+                {
+                    string valoreSelezionato = Mimetica.SelectedValue;
+
+
+
+                    string query = $"SELECT * FROM ProdottiColori WHERE idProdotto = {Convert.ToInt32(Request.QueryString["IdProdotto"])} AND NomeColore = '{valoreSelezionato}'";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        Immagine.Src = reader["PercorsoImmagine"].ToString();
+
+                    }
+                    else
+                    {
+                        alert.Style.Add("display", "block");
+                        alert.InnerHtml = "Colore non disponibile";
+
+                    }
+                }
+                else
+                {
+                    Response.Redirect("Default.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Error: ");
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+
+
+
+
+
     }
 }
