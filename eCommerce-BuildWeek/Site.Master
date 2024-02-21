@@ -18,6 +18,7 @@
     <link href="./Content/Site.css" rel="stylesheet" />
     <link href="./Content/bootstrap.css" rel="stylesheet" />
     <link href="./Content/style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -46,25 +47,30 @@
         <div class="navbar-nav flex-row">
              <ul class="navbar-nav flex-grow-1 justify-content-end">
                 <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-
-
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li class="nav-item"><a class="ms-xs-0 ms-sm-3 nav-link" runat="server" href="~/">Prodotti</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </div>
-
-
-
-                <li class="nav-item"><a  id="backOffice" class="ms-xs-0 ms-sm-3 nav-link" runat="server" href="/backOffice.aspx">Black-office</a></li>
                 
+                 
+                 
+                 <li class="nav-item dropdown ms-xs-0 ms-sm-3 ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Articoli
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Default.aspx">Tutti gli articoli</a></li>
+                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Default.aspx?Categoria=Fucile%20d'assalto">Fucili d'assalto</a></li>
+                        <li class="nav-item"><a  class="nav-link dropdown-item px-3" runat="server" href="~/Default.aspx?Categoria=mitraglietta">Mitragliette</a></li>
+                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Default.aspx?Categoria=pistola">Pistole</a></li>
+
+                    </ul>
+                </li>
+
+
+
+                 <li class="nav-item"><a  id="backOffice" class="ms-xs-0 ms-sm-3 nav-link" runat="server" href="/backOffice.aspx">Black-office</a></li>
             </ul>
         </div>
+
+                    
+
         
         
         <div class="mx-auto d-none d-lg-block">
