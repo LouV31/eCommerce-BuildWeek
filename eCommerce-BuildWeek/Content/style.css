@@ -132,3 +132,17 @@ h4 {
 .custom-alert {
     background-color: #4C531F !important;
 }
+
+.custom-span {
+    background-color: #CD8626;
+    margin-top: -10px;
+}
+
+.bordo-selezionato {
+    border: 2px solid white;
+}
+
+.selezione-colore {
+    cursor: pointer;
+    margin-inline: 5px;
+}

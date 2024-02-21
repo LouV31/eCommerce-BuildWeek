@@ -46,7 +46,21 @@
         <div class="navbar-nav flex-row">
              <ul class="navbar-nav flex-grow-1 justify-content-end">
                 <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                <li class="nav-item"><a class="ms-xs-0 ms-sm-3 nav-link" runat="server" href="~/">Prodotti</a></li>
+
+
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li class="nav-item"><a class="ms-xs-0 ms-sm-3 nav-link" runat="server" href="~/">Prodotti</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+
+
+
                 <li class="nav-item"><a  id="backOffice" class="ms-xs-0 ms-sm-3 nav-link" runat="server" href="/backOffice.aspx">Black-office</a></li>
                 
             </ul>
