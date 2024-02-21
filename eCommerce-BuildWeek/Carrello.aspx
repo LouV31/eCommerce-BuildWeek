@@ -52,7 +52,7 @@
 
 <div class="d-flex flex-column align-items-end">
     <p runat="server" id="contoTotale" class="text-end mb-0"></p>
-    <asp:Button  id="procediOrdine" runat="server" Text="Procedi all'acquisto" Visible="false" CssClass="p-3 mt-2 btn btn btn2o title-up text-white"/>
+    <asp:Button  id="procediOrdine" OnClick="procediOrdine_Click" runat="server" Text="Procedi all'acquisto" Visible="false" CssClass="p-3 mt-2 btn btn btn2o title-up text-white"/>
 </div>
 </div>
 </body>

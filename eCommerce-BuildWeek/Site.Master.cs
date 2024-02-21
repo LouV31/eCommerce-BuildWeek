@@ -29,9 +29,11 @@ namespace eCommerce_BuildWeek
                 string isAdmin = (string)Session["isAdmin"];
                 if (!string.IsNullOrEmpty(nome))
                 {
+                    string idUtente = (string)Session["idUtente"];
                     login.Style.Add("display", "none");
                     pannelloUtente.Style.Add("display", "flex");
-                    benvenuto.InnerHtml = "Ciao, " + nome;
+                    questoUtente.InnerHtml = nome;
+                    questoUtente.HRef = "/InfoUtente.aspx?utente=" + idUtente;
 
                     if (isAdmin == "True")
                     {

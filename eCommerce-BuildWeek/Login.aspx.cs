@@ -27,6 +27,8 @@ namespace eCommerce_BuildWeek
                 if (reader.Read())
                 {
 
+                    Session["indirizzo"] = reader["Indirizzo"].ToString();
+                    Session["idUtente"] = reader["idUtente"].ToString();
                     Session["email"] = reader["Email"].ToString();
                     Session["password"] = reader["Password"].ToString();
                     Session["nome"] = reader["Nome"].ToString();

@@ -127,6 +127,7 @@
     <Content Include="Dettagli.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="InfoUtente.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Modifica.aspx" />
     <Content Include="SignUp.aspx" />
@@ -232,6 +233,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InfoUtente.aspx.cs">
+      <DependentUpon>InfoUtente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoUtente.aspx.designer.cs">
+      <DependentUpon>InfoUtente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
