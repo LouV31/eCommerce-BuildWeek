@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="backOffice.aspx.cs" Inherits="eCommerce_BuildWeek.backOffice" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <h2>Back Office</h2>
+        <div class="d-flex justify-content-between">
+
+            <h2>Back Office</h2>
+            <a href="Aggiungi.aspx" class="btn btn-warning">Aggiungi</a>
+        </div>
         <!-- intestazione tabella -->
         <div class="row text-bg-light bg-opacity-10">
 
@@ -31,6 +35,28 @@
                 </p>
             </div>
         </div>
+
+
+        
+
+        <!-- Modal -->
+        <!--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p runat="server" id="scriviqualcosa"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <asp:Button ID="Rimuovi" data-bs-toggle="modal" data-bs-target="#staticBackdrop" runat="server" OnClick="Rimuovi_Click" type="button" class="btn btn-primary" Text="Elimina" CommandArgument='' />
+                    </div>
+                </div>
+            </div>
+        </div>-->
 
         <!-- contenuto tabella -->
         <asp:Repeater ID="backOfficeRepeater" runat="server">

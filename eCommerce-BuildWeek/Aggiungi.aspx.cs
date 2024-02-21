@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace eCommerce_BuildWeek
 {
@@ -21,7 +22,9 @@ namespace eCommerce_BuildWeek
             try
             {
                 conn.Open();
-                string query = $"INSERT INTO Prodotti (Nome, Descrizione, Prezzo, Unita, Categoria, Immagine) VALUES ('{Nome.Text}', '{Descrizione.Text}', {Convert.ToDouble(Prezzo.Text.Replace(",", "."))}, {Convert.ToInt32(Unita.Text)}, '{Categoria.Text}', '{Immagine.Text}')";
+                string prezzoText = Prezzo.Text.Replace(",", ".");
+                double prezzo = double.Parse(prezzoText, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+                string query = $"INSERT INTO Prodotti (Nome, Descrizione, Prezzo, Unita, Categoria, Immagine) VALUES ('{Nome.Text}', '{Descrizione.Text}', {prezzo.ToString(CultureInfo.InvariantCulture)}, {Convert.ToInt32(Unita.Text)}, '{Categoria.Text}', '{Immagine.Text}')";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 Response.Redirect("backOffice");

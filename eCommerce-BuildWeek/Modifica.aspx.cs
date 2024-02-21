@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace eCommerce_BuildWeek
 {
@@ -59,7 +60,9 @@ namespace eCommerce_BuildWeek
             try
             {
                 conn.Open();
-                string query = $"UPDATE Prodotti SET Nome = '{Nome.Text}', Descrizione = '{Descrizione.Text}', Prezzo = {Convert.ToDouble(Prezzo.Text.Replace(",", "."))}, Unita = {Convert.ToInt32(Unita.Text)}, Categoria = '{Categoria.Text}', Immagine = '{Immagine.Text}' WHERE idProdotto = {Request.QueryString["ProdottoId"]}";
+                string prezzoText = Prezzo.Text.Replace(',', '.');
+                double prezzo = double.Parse(prezzoText, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+                string query = $"UPDATE Prodotti SET Nome = '{Nome.Text}', Descrizione = '{Descrizione.Text}', Prezzo = {prezzo.ToString(CultureInfo.InvariantCulture)}, Unita = {Convert.ToInt32(Unita.Text)}, Categoria = '{Categoria.Text}', Immagine = '{Immagine.Text}' WHERE idProdotto = {Request.QueryString["ProdottoId"]}";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 Response.Redirect("backOffice");

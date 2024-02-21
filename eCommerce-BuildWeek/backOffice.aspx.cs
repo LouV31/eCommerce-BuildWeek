@@ -8,6 +8,10 @@ namespace eCommerce_BuildWeek
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+
+
             string isAdmin = (string)Session["isAdmin"];
             if (isAdmin != "True")
             {
@@ -34,11 +38,13 @@ namespace eCommerce_BuildWeek
             {
                 conn.Close();
             }
+
+
         }
 
         protected void Rimuovi_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
+            LinkButton button = (LinkButton)sender;
             int idProdotto = Convert.ToInt32(button.CommandArgument);
 
             Connection.ConnectionString();
@@ -61,5 +67,18 @@ namespace eCommerce_BuildWeek
                 conn.Close();
             }
         }
+
+        /*protected void Button1_Click(object sender, EventArgs e)
+        {
+
+
+            LinkButton button = (LinkButton)sender;
+            int idProdotto = Convert.ToInt32(button.CommandArgument);
+            System.Diagnostics.Debug.WriteLine("Ciao: " + idProdotto);
+            Response.Write("Ciao: " + idProdotto);
+            scriviqualcosa.InnerHtml = idProdotto.ToString();
+            Rimuovi.CommandArgument = idProdotto.ToString();
+
+        }*/
     }
 }
