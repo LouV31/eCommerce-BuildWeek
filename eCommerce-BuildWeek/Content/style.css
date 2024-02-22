@@ -150,3 +150,8 @@ h4 {
 .dropdown-menu {
     background-color: #4C531F !important;
 }
+
+.carousel-item {
+    width: 800% !important;
+    margin-left: -200% !important;
+}
