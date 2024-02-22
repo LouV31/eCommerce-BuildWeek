@@ -12,6 +12,8 @@ namespace eCommerce_BuildWeek
         {
             if (!IsPostBack)
             {
+
+
                 List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
                 if (carrello != null && carrello.Count > 0)
                 {
@@ -23,7 +25,7 @@ namespace eCommerce_BuildWeek
                     contoTotale.InnerHtml = "Totale provvisorio: " + totale.ToString("0.00") + "€";
 
                     int numeroTotaleArticoli = carrello.Sum(p => p.QuantityInCart);
-                    if (carrello.Count > 1)
+                    if (carrello.Count >= 1)
                     {
 
                         procediOrdine.Visible = true;
@@ -109,6 +111,10 @@ namespace eCommerce_BuildWeek
                             string query2 = $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto, Quantita) VALUES ( {idOrdine}, {prodotto.Id}, {prodotto.QuantityInCart})";
                             SqlCommand cmd2 = new SqlCommand(query2, conn2);
                             cmd2.ExecuteNonQuery();
+
+                            string query3 = $"UPDATE Prodotti SET Unita = Unita - {prodotto.QuantityInCart} WHERE idProdotto = {prodotto.Id}";
+                            SqlCommand cmd3 = new SqlCommand(query3, conn2);
+                            cmd3.ExecuteNonQuery();
                         }
                         Session.Remove("carrello");
                         Response.Redirect(Request.RawUrl);

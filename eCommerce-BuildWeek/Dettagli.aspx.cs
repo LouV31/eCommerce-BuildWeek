@@ -44,6 +44,8 @@ namespace eCommerce_BuildWeek
                         {
                             Disponibilita.InnerHtml = "Non disponibile";
                             Disponibilita.Style.Add("color", "red");
+                            aggiungiCarrello.Enabled = false;
+                            Quantità.Enabled = false;
                         }
 
                         //categoria
