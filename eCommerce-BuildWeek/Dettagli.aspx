@@ -63,7 +63,8 @@ Inherits="eCommerce_BuildWeek.Dettagli" EnableEventValidation="false" %>
               Text="Aggiungi al carrello"
             />
 
-            <asp:TextBox runat="server" ID="Quantità" CssClass="textBox ms-3 fw-bold" TextMode="Number" Text="1" />
+            <asp:TextBox runat="server" ID="Quantità" CssClass="textBox ms-3 fw-bold" TextMode="Number" Text="1" min="1" step="1" />
+
             </div>
 
 
