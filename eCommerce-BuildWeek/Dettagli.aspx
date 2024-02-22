@@ -54,7 +54,7 @@ Inherits="eCommerce_BuildWeek.Dettagli" EnableEventValidation="false" %>
 
             <br />
 
-            <div class="d-flex">
+            <div class="d-flex mb-5">
             <asp:Button
               runat="server"
               id="aggiungiCarrello"
@@ -69,6 +69,35 @@ Inherits="eCommerce_BuildWeek.Dettagli" EnableEventValidation="false" %>
 
           </div>
         </div>
+
+          <h2 class="h4 mt-5 ms-3">Articoli correlati</h2>
+
+          <div class="row">
+              <asp:Repeater runat="server" ID="Repeater10">
+               <ItemTemplate>
+                   <div class="col-4">
+
+                       <div class="card mx-2 my-2 bg-transparent border-0 text-white overflow-hidden shadow">
+
+                           <div class="d-flex  align-items-center mx-auto">
+                               <h5 class="title-up card-title m-0 fs-2 fw-bold mt-3"><%# Eval("Nome") %></h5>
+                           </div>
+
+                           <div class="position-relative">
+                               <img src='<%# Eval("Immagine") %>' class="px-3 card-img-top img-fluid" style="max-height: 250px; object-fit: contain" alt='<%# Eval("Nome") %>'>
+                               <span class="custom-span fs-5 bg-opacity-75 shadow rounded-0 badge w-100  bg-opacity-75"><%# Eval("Prezzo", "{0:c2}") %></span>
+                           </div>
+
+                           <a href="<%# "Dettagli.aspx?IdProdotto=" + Eval("idProdotto") %>" class="text-decoration-none rounded-0 w-100 text-white btn btn2i fw-bolder text-white">Dettagli
+                           </a>
+
+                       </div>
+                    </div>
+                  </ItemTemplate>
+                </asp:Repeater>
+          </div>
+
+
       </div>
     </body>
 

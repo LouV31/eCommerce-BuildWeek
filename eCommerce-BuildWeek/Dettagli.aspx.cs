@@ -14,6 +14,9 @@ namespace eCommerce_BuildWeek
             }
 
             SqlConnection conn = Connection.ConnectionString();
+
+
+
             try
             {
                 conn.Open();
@@ -21,8 +24,12 @@ namespace eCommerce_BuildWeek
                 {
                     string query = $"SELECT * FROM Prodotti WHERE idProdotto = {Convert.ToInt32(Request.QueryString["IdProdotto"])}";
 
+
                     SqlCommand cmd = new SqlCommand(query, conn);
+
                     SqlDataReader reader = cmd.ExecuteReader();
+
+
 
                     if (reader.Read())
                     {
@@ -34,7 +41,7 @@ namespace eCommerce_BuildWeek
                         Prezzo.InnerHtml = "€" + Convert.ToDouble(reader["Prezzo"]).ToString("0.00");
 
 
-                        // aggiunto if per la disponibilità
+                        // aggiunto if per la disponibilità                        
                         if (Convert.ToInt32(reader["Unita"]) > 0)
                         {
                             Disponibilita.InnerHtml = "Disponibile";
@@ -48,6 +55,7 @@ namespace eCommerce_BuildWeek
 
                         //categoria
                         Categoria.InnerHtml = reader["Categoria"].ToString();
+
                     }
                     else
                     {
@@ -55,6 +63,23 @@ namespace eCommerce_BuildWeek
                         alert.InnerHtml = "Prodotto non trovato";
 
                     }
+
+
+                    string categoria = reader["Categoria"].ToString();
+                    string querySimili = "SELECT * FROM Prodotti WHERE Categoria = @Categoria AND idProdotto != @IdProdotto";
+
+                    SqlCommand cmdSimili = new SqlCommand(querySimili, conn);
+
+                    cmdSimili.Parameters.AddWithValue("@Categoria", categoria);
+                    cmdSimili.Parameters.AddWithValue("@IdProdotto", Convert.ToInt32(Request.QueryString["IdProdotto"]));
+                    reader.Close();
+                    SqlDataReader readerSimili = cmdSimili.ExecuteReader();
+                    Repeater10.DataSource = readerSimili;
+                    Repeater10.DataBind();
+                    readerSimili.Close();
+                    //se vogliamo, ma non vogliamo qua si puo fare for per limitare correlati a 3. 
+
+
                 }
                 else
                 {
@@ -69,7 +94,10 @@ namespace eCommerce_BuildWeek
             finally
             {
                 conn.Close();
+
             }
+
+
         }
 
         protected void aggiungiCarrello_Click(object sender, EventArgs e)

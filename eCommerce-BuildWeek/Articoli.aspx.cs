@@ -20,15 +20,15 @@ namespace eCommerce_BuildWeek
                     switch (categoria.ToLower())
                     {
                         case "mitraglietta":
-                            categoryHeading.InnerText = "Mitraglietta";
+                            categoryHeading.InnerText = "Mitragliette";
                             categoryBanner.Src = "../Content/assets/banner-2.png";
                             break;
                         case "pistola":
-                            categoryHeading.InnerText = "Pistola";
+                            categoryHeading.InnerText = "Pistole";
                             categoryBanner.Src = "../Content/assets/banner-3.png";
                             break;
                         case "fucile d'assalto":
-                            categoryHeading.InnerText = "Fucile d'assalto";
+                            categoryHeading.InnerText = "Fucili d'assalto";
                             categoryBanner.Src = "../Content/assets/banner-1.png";
                             break;
                         default:
@@ -38,7 +38,7 @@ namespace eCommerce_BuildWeek
                 }
                 else
                 {
-                    categoryHeading.InnerText = "Tutti gli articoli";
+                    categoryHeading.InnerHtml = "Tutti gli <span class='orange-span'>articoli</span>";
                     categoryBanner.Src = "./Content/assets/banner-0.png";
                 }
 

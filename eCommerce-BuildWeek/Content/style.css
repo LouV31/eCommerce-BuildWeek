@@ -179,4 +179,9 @@ background-color: #6e7831 !important;
 
 .headingImg {
     top: 43%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    filter: drop-shadow(4px 4px 2px #000000) !important;
+    white-space: nowrap;
 }

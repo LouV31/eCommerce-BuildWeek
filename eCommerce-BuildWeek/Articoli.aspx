@@ -7,7 +7,9 @@
         <div class="container">
 
             <div class="position-relative">
+
             <h2 id="categoryHeading" class="position-absolute headingImg title-up" runat="server"></h2>
+
             <div class="cat-banner">
             <img id="categoryBanner" runat="server" class="d-block w-100 cat-banner" alt="banner">
             </div>
