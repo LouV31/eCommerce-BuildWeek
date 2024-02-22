@@ -21,8 +21,8 @@
                     <div class="carousel-item active">
                         <img src="./Content/assets/carosello0.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <h5 class="orange-span fs-2 headingCarousel">UNITA' E TATTICA</h5>
+                            <p class="parCarousel">Esplora il nostro arsenale per squadre d'élite. Tutto ciò di cui avete bisogno per dominare in ogni scenario.</p>
                         </div>
                     </div>
 
@@ -30,30 +30,30 @@
                     <div class="carousel-item">
                         <img src="./Content/assets/carosello1.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <h5 class="orange-span fs-2 headingCarousel">OGNI COLPO CONTA</h5>
+                            <p class="parCarousel">La nostra selezione di sistemi di mira ti aiuterà a tenere il bersaglio sempre a fuoco. La tua prossima missione inizia qui.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="./Content/assets/carosello2.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            <h5 class="orange-span fs-2 headingCarousel">PREDATORE OMBRA</h5>
+                            <p class="parCarousel">L'elemento sorpresa sarà la tua arma più potente. Diventa invisibile, diventa invincibile.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="./Content/assets/carosello3.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            <h5 class="orange-span fs-2 headingCarousel">PRONTI, PUNTARE, FUOCO</h5>
+                            <p class="parCarousel">Affina le tue capacità con strumenti progettati per la vittoria. Per tiratori che esigono solo il meglio.</p>
                         </div>
                     </div>
 
                     <div class="carousel-item">
                         <img src="./Content/assets/carosello6.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            <h5 class="orange-span fs-2 headingCarousel">VETERANI DEL CAMPO</h5>
+                            <p class="parCarousel">Attrezzature testate in campo per superare le prove più dure. Oltre il tempo, oltre i limiti.</p>
                         </div>
                     </div>
                 </div>

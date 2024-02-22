@@ -185,3 +185,14 @@ background-color: #6e7831 !important;
     filter: drop-shadow(4px 4px 2px #000000) !important;
     white-space: nowrap;
 }
+
+.headingCarousel {
+    filter: drop-shadow(3px 3px 1px #000000) !important;
+    font-size: 45px !important;
+}
+
+.parCarousel {
+filter: drop-shadow(2px 2px 1px #000000) !important;
+    font-size: 20px !important;
+    color: white;
+}
