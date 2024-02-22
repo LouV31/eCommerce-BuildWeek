@@ -2,6 +2,7 @@
 
 body {
     background-color: #141414;
+    overflow-x: hidden;
 }
 
 p {
@@ -151,7 +152,31 @@ h4 {
     background-color: #4C531F !important;
 }
 
-.carousel-item {
-    width: 800% !important;
-    margin-left: -200% !important;
+
+
+.top-category {
+    border-color: #4C531F !important;
+    filter: drop-shadow(6px 2px 2px #000000) !important;
+    transition: transform 0.3s ease;
+}
+
+.top-category:hover {
+    transform: scale(1.2) ;
+}
+
+.orange-span {
+color: #CD8626;
+}
+
+#carouselExampleCaptions, #categoryBanner, .cat-banner {
+    width: 158% !important;
+    margin-left: -29% !important;
+}
+
+.dropdown-item:hover {
+background-color: #6e7831 !important;
+}
+
+.headingImg {
+    top: 43%;
 }

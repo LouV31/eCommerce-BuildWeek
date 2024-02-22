@@ -46,7 +46,7 @@
     <div class="container">
         <div class="navbar-nav flex-row">
              <ul class="navbar-nav flex-grow-1 justify-content-end">
-                <li class="nav-item"><a class="nav-link" runat="server" href="~/Home.aspx">Home</a></li>
+                <li class="nav-item"><a class="nav-link" runat="server" href="~/Default.aspx">Home</a></li>
                 
                  
                  
@@ -55,10 +55,10 @@
                         Articoli
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Default.aspx">Tutti gli articoli</a></li>
-                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Default.aspx?Categoria=Fucile%20d'assalto">Fucili d'assalto</a></li>
-                        <li class="nav-item"><a  class="nav-link dropdown-item px-3" runat="server" href="~/Default.aspx?Categoria=mitraglietta">Mitragliette</a></li>
-                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Default.aspx?Categoria=pistola">Pistole</a></li>
+                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Articoli.aspx">Tutti gli articoli</a></li>
+                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Articoli.aspx?Categoria=Fucile%20d'assalto">Fucili d'assalto</a></li>
+                        <li class="nav-item"><a  class="nav-link dropdown-item px-3" runat="server" href="~/Articoli.aspx?Categoria=mitraglietta">Mitragliette</a></li>
+                        <li class="nav-item"><a class="nav-link dropdown-item px-3" runat="server" href="~/Articoli.aspx?Categoria=pistola">Pistole</a></li>
 
                     </ul>
                 </li>
