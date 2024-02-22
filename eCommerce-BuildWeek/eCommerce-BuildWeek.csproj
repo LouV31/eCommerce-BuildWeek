@@ -125,6 +125,7 @@
     <Content Include="Content\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="Dettagli.aspx" />
+    <Content Include="DettagliOrdine.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="InfoUtente.aspx" />
@@ -230,6 +231,13 @@
     </Compile>
     <Compile Include="Dettagli.aspx.designer.cs">
       <DependentUpon>Dettagli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DettagliOrdine.aspx.cs">
+      <DependentUpon>DettagliOrdine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DettagliOrdine.aspx.designer.cs">
+      <DependentUpon>DettagliOrdine.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

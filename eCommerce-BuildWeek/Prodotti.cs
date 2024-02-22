@@ -15,8 +15,8 @@ namespace eCommerce_BuildWeek
         private int unita;
         public int Unita { get => unita; set => unita = value; }
 
-        private int quantità = 0;
-        public int Quantità { get => quantità; set => quantità = value; }
+        private int quantityInCart;
+        public int QuantityInCart { get => quantityInCart; set => quantityInCart = value; }
         private string categoria;
         public string Categoria { get => categoria; set => categoria = value; }
         private string immagine;
@@ -27,18 +27,30 @@ namespace eCommerce_BuildWeek
         {
             return ListaProdotti;
         }
-        /*public static void AggiungiProdotto(Prodotti prodotto)
+
+        public void IsEqualZero(int quantity, List<Prodotti> listaProdotti)
         {
-            ListaProdotti.Add(prodotto);
-        }*/
-        public static void RimuoviProdotto(Prodotti prodotto)
-        {
-            ListaProdotti.Remove(prodotto);
+            QuantityInCart = quantity;
+            foreach (Prodotti prodotto in listaProdotti)
+            {
+
+                if (prodotto.QuantityInCart == 0)
+                {
+                    listaProdotti.Remove(prodotto);
+                }
+
+            }
         }
 
-        public static void SvuotaProdotti(Prodotti prodotto)
+        public static double CalcoloTotale(List<Prodotti> carrello)
         {
-            ListaProdotti.Clear();
+            double Totale = 0;
+            foreach (Prodotti prodotto in carrello)
+            {
+                // Moltiplica il prezzo del prodotto per la sua quantità
+                Totale += prodotto.Prezzo * prodotto.QuantityInCart;
+            }
+            return Totale;
         }
 
         public Prodotti(int id, string nome, string descrizione, double prezzo, int unita, string categoria, string immagine)
@@ -68,6 +80,7 @@ namespace eCommerce_BuildWeek
             }
             return null;
         }
+
     }
 
 
