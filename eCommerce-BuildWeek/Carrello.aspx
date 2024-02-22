@@ -42,7 +42,6 @@
 
                                     <%--<p runat="server" id="n_prodotti" class="mb-0"><%# Eval("Quantità") %></p>--%>
                                     <asp:Button ID="rimuoviCarrello" runat="server" OnClick="rimuoviCarrello_Click" Text="Rimuovi" CssClass="btn2q ms-2 btn title-up text-white" CommandArgument='<%# Eval("Id") %>' />
-                                    <asp:Button runat="server" Text="Salva per dopo" CssClass="ms-2 btn btn btn2w title-up text-white" CommandArgument='<%# Eval("Id") %>' />
                             </div>
 
                         </div>
