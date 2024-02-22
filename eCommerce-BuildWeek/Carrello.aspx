@@ -33,14 +33,18 @@
                             <p class="card-text mt-0 pt-0 text-truncate"><%# Eval("Descrizione") %></p>
 
 
-                        <div class="d-flex">
-                            <p class="fw-semibold fs-6 mb-0 d-flex align-items-end">Q.tà:
-                                <asp:TextBox ID="quantita" runat="server" Text='<%# Eval("Quantità") %>' CssClass="ms-2 " Width="30px" ReadOnly="true" /></p>
-                            <%--<p runat="server" id="n_prodotti" class="mb-0"><%# Eval("Quantità") %></p>--%>
-                            <asp:Button ID="rimuoviCarrello" runat="server" OnClick="rimuoviCarrello_Click" Text="Rimuovi" CssClass="btn2q ms-2 btn title-up text-white" CommandArgument='<%# Eval("Id") %>' />
-                            <asp:Button runat="server" Text="Salva per dopo" CssClass="ms-2 btn btn btn2w title-up text-white" CommandArgument='<%# Eval("Id") %>' />
-                        </div>
-                        
+                            <div class="d-flex">
+                                <p class="fw-semibold fs-6 mb-0 d-flex align-items-end">
+                                    Q.tà:
+                                <asp:Button ID="incrementaQuantita" runat="server" Text="+" OnClick="incrementaQuantita_Click" CommandArgument='<%# Eval("Id") %>' CssClass="ms-2 btn title-up text-white" />
+                                    <asp:TextBox ID="quantita" runat="server" Text='<%# Eval("QuantityInCart") %>' CssClass="ms-2 " Width="30px" ReadOnly="true" />
+                                    <asp:Button ID="decrementaQuantita" runat="server" Text="-" OnClick="decrementaQuantita_Click" CommandArgument='<%# Eval("Id") %>' CssClass="ms-2 btn title-up text-white" />
+
+                                    <%--<p runat="server" id="n_prodotti" class="mb-0"><%# Eval("Quantità") %></p>--%>
+                                    <asp:Button ID="rimuoviCarrello" runat="server" OnClick="rimuoviCarrello_Click" Text="Rimuovi" CssClass="btn2q ms-2 btn title-up text-white" CommandArgument='<%# Eval("Id") %>' />
+                                    <asp:Button runat="server" Text="Salva per dopo" CssClass="ms-2 btn btn btn2w title-up text-white" CommandArgument='<%# Eval("Id") %>' />
+                            </div>
+
                         </div>
 
 

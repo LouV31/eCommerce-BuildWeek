@@ -31,12 +31,13 @@
                 <h2>Riepilogo Ordini</h2>
                 <asp:Repeater runat="server" ID="RiepilodoOrdiniRep">
                     <ItemTemplate>
-                        <div class="d-flex">
+                        <div class="d-flex text-white">
                             <div class="col-8">
                                 <asp:Label Text='<%# Eval("idOrdine") %>' runat="server" />
                                 <asp:Label Text='<%# Eval("Indirizzo_Spedizione") %>' ID="indirizzoSpedizione" runat="server" />
                                 <asp:Label Text='<%# Eval("Quantita") %>' ID="Quantità" runat="server" />
                                 <asp:Label Text='<%# Eval("Totale") %>' ID="Totale" runat="server" />
+                                <a href='<%# "/DettagliOrdine.aspx?ordineId=" + Eval("idOrdine") %>'  id="DettagliOrdini" runat="server" >Vai a dettagli</a>  
                             </div>
                             
                         </div>

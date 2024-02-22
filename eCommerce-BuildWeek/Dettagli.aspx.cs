@@ -44,6 +44,8 @@ namespace eCommerce_BuildWeek
                         {
                             Disponibilita.InnerHtml = "Non disponibile";
                             Disponibilita.Style.Add("color", "red");
+                            aggiungiCarrello.Enabled = false;
+                            Quantità.Enabled = false;
                         }
 
                         //categoria
@@ -101,8 +103,17 @@ namespace eCommerce_BuildWeek
                         }
 
 
-                        for (int i = 0; i < quantità; i++)
+                        // Cerca il prodotto nel carrello
+                        Prodotti prodottoEsistente = carrello.Find(p => p.Id == prodotto.Id);
+                        if (prodottoEsistente != null)
                         {
+                            // Se il prodotto esiste, aumenta la quantità
+                            prodottoEsistente.QuantityInCart += quantità;
+                        }
+                        else
+                        {
+                            // Se il prodotto non esiste, aggiungi al carrello
+                            prodotto.QuantityInCart = quantità;
                             carrello.Add(prodotto);
                         }
 

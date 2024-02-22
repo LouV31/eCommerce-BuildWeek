@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.UI;
 
 namespace eCommerce_BuildWeek
@@ -14,8 +15,10 @@ namespace eCommerce_BuildWeek
                 List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
                 if (carrello != null && carrello.Count > 0)
                 {
+                    int numeroTotaleArticoli = carrello.Sum(p => p.QuantityInCart);
                     badge.Style.Add("display", "block");
-                    carrelloCount.Text = carrello.Count.ToString();
+
+                    carrelloCount.Text = numeroTotaleArticoli.ToString();
                 }
                 else
                 {

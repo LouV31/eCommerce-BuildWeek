@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Web.UI.WebControls;
 
 namespace eCommerce_BuildWeek
@@ -11,14 +12,32 @@ namespace eCommerce_BuildWeek
         {
             if (!IsPostBack)
             {
+
+
                 List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
                 if (carrello != null && carrello.Count > 0)
                 {
                     alert.Style.Add("display", "none");
                     Repeater2.DataSource = carrello;
                     Repeater2.DataBind();
-                    CalcoloTotale(carrello);
-                    Session["Totale"] = CalcoloTotale(carrello);
+                    double totale = Prodotti.CalcoloTotale(carrello);
+                    Session["Totale"] = totale;
+                    contoTotale.InnerHtml = "Totale provvisorio: " + totale.ToString("0.00") + "€";
+
+                    int numeroTotaleArticoli = carrello.Sum(p => p.QuantityInCart);
+                    if (carrello.Count >= 1)
+                    {
+
+                        procediOrdine.Visible = true;
+                    }
+                    if (numeroTotaleArticoli > 1)
+                    {
+                        contoTotale.InnerHtml += " (" + numeroTotaleArticoli + " articoli)";
+                    }
+                    else
+                    {
+                        contoTotale.InnerHtml += " (" + numeroTotaleArticoli + " articolo)";
+                    }
                 }
                 else
                 {
@@ -41,7 +60,7 @@ namespace eCommerce_BuildWeek
             Response.Redirect(Request.RawUrl);
         }
 
-        protected double CalcoloTotale(List<Prodotti> carrello)
+        /*protected double CalcoloTotale(List<Prodotti> carrello)
         {
             double Totale = 0;
             foreach (Prodotti prodotto in carrello)
@@ -60,7 +79,7 @@ namespace eCommerce_BuildWeek
             }
             procediOrdine.Visible = true;
             return Totale;
-        }
+        }*/
 
         protected void procediOrdine_Click(object sender, EventArgs e)
         {
@@ -89,9 +108,13 @@ namespace eCommerce_BuildWeek
                         int idOrdine = (int)getIdOrdineCmd.ExecuteScalar();
                         foreach (Prodotti prodotto in carrello)
                         {
-                            string query2 = $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto, Quantita) VALUES ( {idOrdine}, {prodotto.Id}, 1)";
+                            string query2 = $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto, Quantita) VALUES ( {idOrdine}, {prodotto.Id}, {prodotto.QuantityInCart})";
                             SqlCommand cmd2 = new SqlCommand(query2, conn2);
                             cmd2.ExecuteNonQuery();
+
+                            string query3 = $"UPDATE Prodotti SET Unita = Unita - {prodotto.QuantityInCart} WHERE idProdotto = {prodotto.Id}";
+                            SqlCommand cmd3 = new SqlCommand(query3, conn2);
+                            cmd3.ExecuteNonQuery();
                         }
                         Session.Remove("carrello");
                         Response.Redirect(Request.RawUrl);
@@ -117,5 +140,33 @@ namespace eCommerce_BuildWeek
                 }
             }
         }
+
+
+        protected void incrementaQuantita_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int idProdotto = Convert.ToInt32(btn.CommandArgument);
+            List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
+            Prodotti prodotto = carrello.Find(p => p.Id == idProdotto);
+            if (prodotto != null)
+            {
+                prodotto.QuantityInCart++;
+            }
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void decrementaQuantita_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int idProdotto = Convert.ToInt32(btn.CommandArgument);
+            List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
+            Prodotti prodotto = carrello.Find(p => p.Id == idProdotto);
+            if (prodotto != null && prodotto.QuantityInCart > 1)
+            {
+                prodotto.QuantityInCart--;
+            }
+            Response.Redirect(Request.RawUrl);
+        }
+
     }
 }
