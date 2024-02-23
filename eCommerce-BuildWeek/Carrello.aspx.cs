@@ -116,7 +116,8 @@ namespace eCommerce_BuildWeek
                         foreach (Prodotti prodotto in carrello)
                         {
                             string immagineProdotto = Session["immagineProdotto"].ToString();
-                            string query2 = $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto, Quantita, PercorsoImmagine) VALUES ( {idOrdine}, {prodotto.Id}, {prodotto.QuantityInCart}, '{prodotto.Immagine}')";
+                            string query2 =
+                                $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto, Quantita, PercorsoImmagine) VALUES ( {idOrdine}, {prodotto.Id}, {prodotto.QuantityInCart}, '{prodotto.Immagine}')";
                             SqlCommand cmd2 = new SqlCommand(query2, conn2);
                             cmd2.ExecuteNonQuery();
 
@@ -126,8 +127,7 @@ namespace eCommerce_BuildWeek
                             cmd3.ExecuteNonQuery();
                         }
                         Session.Remove("carrello");
-
-                        Response.Redirect(Request.RawUrl);
+                        Response.Redirect("InfoUtente.aspx?utente=" + Session["idUtente"]);
                     }
                     catch (Exception ex)
                     {

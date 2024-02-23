@@ -57,7 +57,8 @@
             <div class="col-12">
                 <asp:Repeater runat="server" ID="RiepilodoOrdiniRep">
                     <ItemTemplate>
-                             <div class="row border-bottom py-3">
+                      <div class="row border-bottom py-3">
+
                            <div class="col-2 text-secondary">
                                 <asp:Label Text='<%# Eval("idOrdine") %>' runat="server" />
                            </div>
@@ -77,12 +78,13 @@
                         <div class="col-2">
                                <a href='<%# "/DettagliOrdine.aspx?ordineId=" + Eval("idOrdine") %>' class="btn p-1 title-up btn2o text-white" id="DettagliOrdini" runat="server" >Dettagli</a>  
                             </div>
+
                         </div>
-                            </div>  
+ 
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-
         </div>
   
+
 </asp:Content>

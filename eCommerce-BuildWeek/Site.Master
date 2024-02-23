@@ -109,11 +109,10 @@
     </div>
         </nav>
 
-        <div class="container body-content">
+        <div class="container body-content ">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer class="d-flex justify-content-between small border-top py-2">
+            <footer class="d-flex justify-content-between small mt-5 custom-footer py-2">
                 <div>
                     <p class="small">&copy; <%: DateTime.Now.Year %> - BlackMarket Store</p>
                 </div>

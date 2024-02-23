@@ -218,3 +218,10 @@ filter: drop-shadow(2px 2px 1px #000000) !important;
     scrollbar-width: thin; 
     scrollbar-color: #4C531F black;
 }
+
+.custom-footer {
+    width: 130% !important;
+    margin-left: -15% !important;
+    padding-inline: 60px;
+    background-color: #4C531F0a;
+}
