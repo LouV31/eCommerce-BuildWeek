@@ -7,7 +7,7 @@
                 <ItemTemplate>
 
                     <div class="col-8">
-                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Immagine") %>' CssClass="img-fluid" />
+                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PercorsoImmagine") %>' CssClass="img-fluid" />
                         <a href='<%# "/Dettagli.aspx?IdProdotto=" + Eval("FK_IdProdotto") %>'>
                             <asp:Label runat="server" Text='<%# Eval("Nome") %>'></asp:Label>
                         </a>

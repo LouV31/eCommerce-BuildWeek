@@ -6,11 +6,12 @@ namespace eCommerce_BuildWeek
 {
     public partial class Dettagli : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                Mimetica.SelectedValue = "Default";
+                //Mimetica.SelectedValue = "Default";
             }
 
             SqlConnection conn = Connection.ConnectionString();
@@ -115,11 +116,18 @@ namespace eCommerce_BuildWeek
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
+
                     if (reader.Read())
                     {
+                        string immagineSkin = Session["immagineProdotto"] != null ? Session["immagineProdotto"].ToString() : null;
+
+                        string immagineProdotto = string.IsNullOrEmpty(Mimetica.SelectedValue) ? reader["Immagine"].ToString() : immagineSkin;
+
+
+
                         int quantità = Convert.ToInt32(Quantità.Text);
 
-                        Prodotti prodotto = new Prodotti(Convert.ToInt32(reader["idProdotto"]), reader["Nome"].ToString(), reader["Descrizione"].ToString(), Convert.ToDouble(reader["Prezzo"]), Convert.ToInt32(reader["Unita"]), reader["Categoria"].ToString(), reader["Immagine"].ToString());
+                        Prodotti prodotto = new Prodotti(Convert.ToInt32(reader["idProdotto"]), reader["Nome"].ToString(), reader["Descrizione"].ToString(), Convert.ToDouble(reader["Prezzo"]), Convert.ToInt32(reader["Unita"]), reader["Categoria"].ToString(), immagineProdotto);
                         List<Prodotti> carrello;
                         if (Session["carrello"] == null)
                         {
@@ -132,7 +140,7 @@ namespace eCommerce_BuildWeek
 
 
                         // Cerca il prodotto nel carrello
-                        Prodotti prodottoEsistente = carrello.Find(p => p.Id == prodotto.Id);
+                        Prodotti prodottoEsistente = carrello.Find(p => p.Id == prodotto.Id && p.Immagine == prodotto.Immagine);
                         if (prodottoEsistente != null)
                         {
                             // Se il prodotto esiste, aumenta la quantità
@@ -146,6 +154,7 @@ namespace eCommerce_BuildWeek
                         }
 
                         Session["carrello"] = carrello;
+                        //Session.Remove("immagineProdotto");
                         Response.Redirect(Request.RawUrl);
                     }
                 }
@@ -176,6 +185,9 @@ namespace eCommerce_BuildWeek
                 if (!string.IsNullOrEmpty(Request.QueryString["IdProdotto"]))
                 {
                     string valoreSelezionato = Mimetica.SelectedValue;
+                    Session["immagineProdotto"] = valoreSelezionato;
+
+
 
 
 
@@ -187,6 +199,9 @@ namespace eCommerce_BuildWeek
                     if (reader.Read())
                     {
                         Immagine.Src = reader["PercorsoImmagine"].ToString();
+                        string immagine = reader["PercorsoImmagine"].ToString();
+                        Session["immagineProdotto"] = immagine;
+
 
                     }
                     else
@@ -198,6 +213,7 @@ namespace eCommerce_BuildWeek
                 }
                 else
                 {
+
                     Response.Redirect("Default.aspx");
                 }
             }

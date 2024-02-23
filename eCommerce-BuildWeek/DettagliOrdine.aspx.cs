@@ -24,7 +24,7 @@ namespace eCommerce_BuildWeek
 
                 if (!string.IsNullOrEmpty(Request.QueryString["ordineId"]))
                 {
-                    string SingleOrdineQuery = $"SELECT D.FK_IdOrdine, D.FK_IdProdotto, D.Quantita, P.Immagine, P.Nome, P.Prezzo * D.Quantita AS TOTALE FROM DettagliOrdini AS D JOIN Prodotti AS P ON P.idProdotto = D.FK_IdProdotto WHERE D.FK_IdOrdine = {idOrdine}";
+                    string SingleOrdineQuery = $"SELECT D.FK_IdOrdine, D.FK_IdProdotto, D.Quantita, D.PercorsoImmagine,  P.Nome, P.Prezzo * D.Quantita AS TOTALE FROM DettagliOrdini AS D JOIN Prodotti AS P ON P.idProdotto = D.FK_IdProdotto WHERE D.FK_IdOrdine = {idOrdine}";
 
                     SqlCommand cmd = new SqlCommand(SingleOrdineQuery, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
