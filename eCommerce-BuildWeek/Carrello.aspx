@@ -17,7 +17,7 @@
                 <ItemTemplate>
                     <div class="row border border-1 border-secondary border-start-0 border-end-0 border-top-0 mb-3">
                         <div class="col-7">
-                            <img src='<%# Eval("immagine") %>' class="card-img-top img-fluid mb-3" style="max-height: 250px; object-fit: contain" alt='<%# Eval("Nome") %>'>
+                            <img src='<%# Eval("Immagine") %>' class="card-img-top img-fluid mb-3" style="max-height: 250px; object-fit: contain" alt='<%# Eval("Nome") %>'>
                         </div>
 
                         <div class="col-5">

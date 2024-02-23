@@ -40,7 +40,7 @@ Inherits="eCommerce_BuildWeek.Dettagli" EnableEventValidation="false" %>
 
  
             <asp:RadioButtonList runat="server" ID="Mimetica" AutoPostBack="true"
-                OnSelectedIndexChanged="Mimetica_SelectedIndexChanged" CssClass="d-flex d-none">
+                OnSelectedIndexChanged="Mimetica_SelectedIndexChanged" CssClass="d-flex d-none" >
                 <asp:ListItem Value="Default" Text="Default" />
                 <asp:ListItem Value="Silver" Text="Silver" />
                 <asp:ListItem Value="Gold" Text="Gold" />
