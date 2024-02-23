@@ -169,8 +169,8 @@ color: #CD8626;
 }
 
 #carouselExampleCaptions, #categoryBanner, .cat-banner {
-    width: 158% !important;
-    margin-left: -29% !important;
+    width: 130% !important;
+    margin-left: -15% !important;
 }
 
 .dropdown-item:hover {
@@ -178,7 +178,7 @@ background-color: #6e7831 !important;
 }
 
 .headingImg {
-    top: 43%;
+    top: 36%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 50px;
