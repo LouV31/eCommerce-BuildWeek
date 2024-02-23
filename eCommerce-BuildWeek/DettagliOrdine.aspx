@@ -1,23 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DettagliOrdine.aspx.cs" Inherits="eCommerce_BuildWeek.DettagliOrdine" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <div class="row">
+        <h2>Dettaglio ordine</h2>
+
             <asp:Label Text='<%# "Dettagli ordine #" + Eval("Fk_IdOrdine") %>' runat="server"></asp:Label>
             <asp:Repeater ID="DettagliOrdiniRep" runat="server">
                 <ItemTemplate>
-
-                    <div class="col-8">
+           <div class="row border-bottom py-3 mb-3">
+                    <div class="col-6">
                         <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Immagine") %>' CssClass="img-fluid" />
-                        <a href='<%# "/Dettagli.aspx?IdProdotto=" + Eval("FK_IdProdotto") %>'>
-                            <asp:Label runat="server" Text='<%# Eval("Nome") %>'></asp:Label>
-                        </a>
-                        <asp:Label runat="server" Text='<%# "Quantità: " + Eval("quantita") %>'></asp:Label>
-                        <asp:Label runat="server" Text='<%# "Prezzo: " + Eval("TOTALE") %>'></asp:Label>
                     </div>
+                   <div class="col-6 text-center">
 
+                       <h2 class="fs-4 mt-4"> Nome Prodotto:&nbsp;
+                        <a href='<%# "/Dettagli.aspx?IdProdotto=" + Eval("FK_IdProdotto") %>' class="text-decoration-none text-warning">
+                            <asp:Label runat="server" class="h5" Text='<%# Eval("Nome") %>'></asp:Label>
+                        </a>
+                       </h2>
+
+                       <h2 class="fs-4 mt-4"> Quantità:&nbsp;
+                        <asp:Label runat="server" class="h5" Text='<%#Eval("quantita") %>'></asp:Label>
+                       </h2>
+                       
+                       
+                      <h2 class="fs-4 mt-4"> Prezzo:&nbsp;
+                       <asp:Label runat="server" class="h5" Text='<%#Eval("TOTALE") + "€" %>'></asp:Label>
+                      </h2>
+                   
+                   
+                   
+                   </div>
+             </div>
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-    </div>
+
 
 </asp:Content>
