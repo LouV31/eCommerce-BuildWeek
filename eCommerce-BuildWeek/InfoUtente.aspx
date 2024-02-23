@@ -2,35 +2,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="row">
-
-                   
-                    <div class="col-12 text-center">
+           <div class="col-12 text-center">
                         <div class="center-form justify-content-center mx-auto text-center">
-                        <h2>Informazioni Utente</h2>
+                        <h2 class="mb-2">Informazioni Utente</h2>
                         <asp:Label Text="Nome" CssClass="text-white mb-1  mx-auto" runat="server" />
-                        <asp:TextBox id="Nome" runat="server" class="form-control mx-auto mb-3"/>
+                        <asp:TextBox id="Nome" runat="server" class="form-control mx-auto mb-1"/>
 
                         <asp:Label Text="Cognome" CssClass=" text-white mb-1 mx-auto" runat="server" />
-                        <asp:TextBox id="Cognome" runat="server" class="form-control mx-auto mb-3"/>
+                        <asp:TextBox id="Cognome" runat="server" class="form-control mx-auto mb-1"/>
 
                         <asp:Label Text="Email" CssClass="text-white mb-1 mx-auto" runat="server" />
-                        <asp:TextBox id="Email" runat="server" class="form-control mx-auto mb-3"/>
+                        <asp:TextBox id="Email" runat="server" class="form-control mx-auto mb-1"/>
 
                         <asp:Label Text="Password" CssClass="text-white mb-1 mx-auto" runat="server" />
-                        <asp:TextBox id="Password" runat="server" class="form-control mx-auto mb-3"/>
+                        <asp:TextBox id="Password" runat="server" class="form-control mx-auto mb-1"/>
 
                         <asp:Label Text="Indirizzo" CssClass="text-white mb-1 mx-auto" runat="server" />
-                        <asp:TextBox id="Indirizzo" runat="server" class="form-control  mx-auto mb-3"/>
+                        <asp:TextBox id="Indirizzo" runat="server" class="form-control  mx-auto mb-1"/>
 
                         <asp:Label Text="Città" CssClass="text-white mx-auto mb-1" runat="server" />
-                        <asp:TextBox id="Citta" runat="server" class="form-control mx-auto mb-3"/>
+                        <asp:TextBox id="Citta" runat="server" class="form-control mx-auto mb-1"/>
 
                         <asp:Label Text="Cap" CssClass="text-white mx-auto mb-1" runat="server" />
                         <asp:TextBox id="Cap" runat="server" class="form-control mx-auto mb-4"/>
                         </div>
                       <asp:Button runat="server" ID="Modifica" OnClick="Modifica_Click" Text="Modifica" CssClass="btn title-up w-100 text-white btn2o p-2 rounded-1" />
                     </div>
-
                 </div>
 
         <h2 class="mt-5 mb-4">Riepilogo Ordini</h2>
