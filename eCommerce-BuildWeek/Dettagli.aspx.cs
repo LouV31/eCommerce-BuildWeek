@@ -9,10 +9,7 @@ namespace eCommerce_BuildWeek
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                //Mimetica.SelectedValue = "Default";
-            }
+
 
             SqlConnection conn = Connection.ConnectionString();
 

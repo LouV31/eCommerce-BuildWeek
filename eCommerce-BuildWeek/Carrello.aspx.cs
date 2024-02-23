@@ -57,26 +57,7 @@ namespace eCommerce_BuildWeek
             Response.Redirect(Request.RawUrl);
         }
 
-        /*protected double CalcoloTotale(List<Prodotti> carrello)
-        {
-            double Totale = 0;
-            foreach (Prodotti prodotto in carrello)
-            {
-                Totale += prodotto.Prezzo;
-            }
 
-            contoTotale.InnerHtml = "Totale provvisorio: " + Totale.ToString("0.00") + "€";
-            if (carrello.Count > 1)
-            {
-                contoTotale.InnerHtml += " (" + carrello.Count + " articoli)";
-            }
-            else
-            {
-                contoTotale.InnerHtml += " (" + carrello.Count + " articolo)";
-            }
-            procediOrdine.Visible = true;
-            return Totale;
-        }*/
 
         protected void procediOrdine_Click(object sender, EventArgs e)
         {

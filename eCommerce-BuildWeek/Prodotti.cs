@@ -23,24 +23,9 @@ namespace eCommerce_BuildWeek
         public string Immagine { get => immagine; set => immagine = value; }
 
         private static List<Prodotti> ListaProdotti = new List<Prodotti>();
-        public static List<Prodotti> GetProdotti()
-        {
-            return ListaProdotti;
-        }
 
-        public void IsEqualZero(int quantity, List<Prodotti> listaProdotti)
-        {
-            QuantityInCart = quantity;
-            foreach (Prodotti prodotto in listaProdotti)
-            {
 
-                if (prodotto.QuantityInCart == 0)
-                {
-                    listaProdotti.Remove(prodotto);
-                }
 
-            }
-        }
 
         public static double CalcoloTotale(List<Prodotti> carrello)
         {
@@ -64,22 +49,6 @@ namespace eCommerce_BuildWeek
             this.immagine = immagine;
         }
 
-
-
-
-
-
-        public static Prodotti TrovaProdotto(int id)
-        {
-            foreach (Prodotti prodotto in ListaProdotti)
-            {
-                if (prodotto.id == id)
-                {
-                    return prodotto;
-                }
-            }
-            return null;
-        }
 
     }
 

@@ -68,17 +68,6 @@ namespace eCommerce_BuildWeek
             }
         }
 
-        /*protected void Button1_Click(object sender, EventArgs e)
-        {
 
-
-            LinkButton button = (LinkButton)sender;
-            int idProdotto = Convert.ToInt32(button.CommandArgument);
-            System.Diagnostics.Debug.WriteLine("Ciao: " + idProdotto);
-            Response.Write("Ciao: " + idProdotto);
-            scriviqualcosa.InnerHtml = idProdotto.ToString();
-            Rimuovi.CommandArgument = idProdotto.ToString();
-
-        }*/
     }
 }

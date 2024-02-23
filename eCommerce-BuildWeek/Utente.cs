@@ -38,32 +38,10 @@ namespace eCommerce_BuildWeek
             this.isAdmin = isAdmin;
         }
 
-        public static void Registrazione(string nome, string cognome, string email, string password, string indirizzo, string citta, string cap, bool isAdmin = false)
-        {
-            List<Utente> listaUtenti = new List<Utente>();
-
-            Utente utente = new Utente(nome, cognome, email, password, indirizzo, citta, cap, isAdmin);
-            CheckEmail(utente.email, listaUtenti);
 
 
-        }
 
-        public void Accesso()
-        {
 
-        }
 
-        public static void CheckEmail(string email, List<Utente> listaUtenti)
-        {
-            foreach (Utente utente in listaUtenti)
-            {
-
-                if (utente.email != email)
-                {
-                    listaUtenti.Add(utente);
-                }
-            }
-
-        }
     }
 }
