@@ -47,6 +47,7 @@ namespace eCommerce_BuildWeek
                             $"INSERT INTO Utenti(Nome, Cognome, Email, Password, Indirizzo, Citta, Cap) VALUES('{TextName.Text}', '{TextCognome.Text}', '{TextEmail.Text}', '{TextPassword.Text}', '{TextInirizzo.Text}', '{TextCittà.Text}', '{TextCap.Text}'); ";
                         SqlCommand cmd2 = new SqlCommand(query2, conn2);
                         cmd2.ExecuteNonQuery();
+                        Response.Redirect("Login.aspx");
                     }
                     catch (Exception ex)
                     {
