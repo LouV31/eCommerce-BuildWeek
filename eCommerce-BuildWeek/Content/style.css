@@ -196,3 +196,26 @@ filter: drop-shadow(2px 2px 1px #000000) !important;
     font-size: 20px !important;
     color: white;
 }
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: black; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4C531F;
+    border-radius: 10px;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin; 
+    scrollbar-color: #4C531F black;
+}
+
