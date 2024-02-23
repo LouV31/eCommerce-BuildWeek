@@ -41,18 +41,24 @@ namespace eCommerce_BuildWeek
                         Prezzo.InnerHtml = "€" + Convert.ToDouble(reader["Prezzo"]).ToString("0.00");
 
 
+
                         // aggiunto if per la disponibilità                        
-                        if (Convert.ToInt32(reader["Unita"]) > 0)
-                        {
-                            Disponibilita.InnerHtml = "Disponibile";
-                            Disponibilita.Style.Add("color", "green");
-                        }
-                        else
+                        if (Convert.ToInt32(reader["Unita"]) < 1)
                         {
                             Disponibilita.InnerHtml = "Non disponibile";
                             Disponibilita.Style.Add("color", "red");
                             aggiungiCarrello.Enabled = false;
                             Quantità.Enabled = false;
+                        }
+                        else if ((Convert.ToInt32(reader["Unita"]) < 5))
+                        {
+                            Disponibilita.InnerHtml = "Ultimi pezzi !";
+                            Disponibilita.Style.Add("color", "#CD8626");
+                        }
+                        else
+                        {
+                            Disponibilita.InnerHtml = "Disponibile";
+                            Disponibilita.Style.Add("color", "green");
                         }
 
                         //categoria
