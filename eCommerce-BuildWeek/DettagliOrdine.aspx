@@ -9,7 +9,7 @@ CodeBehind="DettagliOrdine.aspx.cs" Inherits="eCommerce_BuildWeek.DettagliOrdine
       <ItemTemplate>
         <div class="row border-bottom py-3 mb-3">
           <div class="col-6">
-            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Immagine") %>' CssClass="img-fluid" />
+            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PercorsoImmagine") %>' CssClass="img-fluid" />
           </div>
           <div class="col-6 text-center">
             <h2 class="fs-4 mt-4">
