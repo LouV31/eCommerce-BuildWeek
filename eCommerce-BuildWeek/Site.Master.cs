@@ -11,7 +11,6 @@ namespace eCommerce_BuildWeek
         {
             if (!IsPostBack)
             {
-
                 List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
                 if (carrello != null && carrello.Count > 0)
                 {
@@ -41,18 +40,15 @@ namespace eCommerce_BuildWeek
                     if (isAdmin == "True")
                     {
                         backOffice.Style.Add("display", "block");
-
                     }
                 }
-
             }
         }
-
 
         protected void logout_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("/");
         }
     }
 }
