@@ -4,12 +4,12 @@
         <div class="d-flex justify-content-between">
 
             <h2>Back Office</h2>
-            <a href="Aggiungi.aspx" class="btn btn-warning">Aggiungi</a>
+            <a href="Aggiungi.aspx" class="btn btn-warning title-up mb-3 p-2">Aggiungi</a>
         </div>
         <!-- intestazione tabella -->
         <div class="row text-bg-light bg-opacity-10">
 
-            <div class="col-1">
+            <div class="col-2">
                 <p class="text-warning small m-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
                         <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
@@ -17,16 +17,19 @@
                     </svg>
                 </p>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <p class="text-warning small m-0">Nome</p>
             </div>
-            <div class="col-5">
+            <div class="col-4">
                 <p class="text-warning small m-0">Descrizione</p>
             </div>
             <div class="col-2">
                 <p class="text-warning small m-0">Prezzo</p>
             </div>
             <div class="col-1">
+                <p class="text-warning text-center small m-0">Qt.a</p>
+            </div>
+            <div class="col-1 text-end">
                 <p class="text-warning small m-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
                         <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
@@ -64,20 +67,23 @@
 
                 <div class="row border-bottom py-3">
 
-                    <div class="col-1">
+                    <div class="col-2">
                         <img src='<%# Eval("Immagine") %>' class="card-img-top img-fluid"  alt='<%# Eval("Nome") %>'>
                     </div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <h5 class="card-title text-white fw-semibold mb-2"><%# Eval("Nome") %></h5>
                         <p class="small">id:<%# Eval("idProdotto") %></p>
                     </div>
-                    <div class="col-5">
+                    <div class="col-4">
                         <p class="fw-normal small mb-0"><%# Eval("Descrizione") %></p>
                     </div>
                     <div class="col-2">
                         <p class="fw-semibold fs-6 mb-0"><%# Eval("Prezzo", "{0:c2}") %></p>
                     </div>
-                    <div class="col-1 text-center p-0">
+                    <div class="col-1">
+                        <p class="fw-normal small text-center mb-0"><%# Eval("Unita") %></p>
+                    </div>
+                    <div class="col-1 text-end p-0">
                         <a id="A1" href='<%# "Modifica.aspx?ProdottoId=" + Eval("idProdotto") %>' runat="server" class="btn btn-sm btn-warning pb-2 mb-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -85,12 +91,12 @@
                             </svg>
                         </a>
 
-                        <asp:LinkButton ID="Button1" runat="server" OnClick="Rimuovi_Click" Text="Rimuovi" CssClass="btn btn-sm btn-danger pb-2 mb-1" CommandArgument='<%# Eval("idProdotto") %>'>
+<%--                        <asp:LinkButton ID="Button1" runat="server" OnClick="Rimuovi_Click" Text="Rimuovi" CssClass="btn btn-sm btn-danger pb-2 mb-1" CommandArgument='<%# Eval("idProdotto") %>'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
                                 <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
-                        </asp:LinkButton>
+                        </asp:LinkButton>--%>
                         
                     </div>
 
