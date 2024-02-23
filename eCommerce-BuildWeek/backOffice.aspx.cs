@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Web.UI.WebControls;
 
 namespace eCommerce_BuildWeek
 {
@@ -8,16 +7,15 @@ namespace eCommerce_BuildWeek
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
-
-
+            // Controlla se l'utente è un amministratore
             string isAdmin = (string)Session["isAdmin"];
             if (isAdmin != "True")
             {
+                // Reindirizza l'utente alla pagina di default se non è un amministratore
                 Response.Redirect("Default");
             }
 
+            // Imposta la stringa di connessione al database
             Connection.ConnectionString();
             SqlConnection conn = Connection.ConnectionString();
             try
@@ -26,44 +24,19 @@ namespace eCommerce_BuildWeek
                 string query = "SELECT * FROM Prodotti";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
+                // Imposta i dati del reader come sorgente dei dati per il repeater
                 backOfficeRepeater.DataSource = reader;
                 backOfficeRepeater.DataBind();
             }
             catch (Exception ex)
             {
+                // Gestisce l'eccezione e mostra un messaggio di errore
                 Response.Write("Error: ");
                 Response.Write(ex.Message);
             }
             finally
             {
-                conn.Close();
-            }
-
-
-        }
-
-        protected void Rimuovi_Click(object sender, EventArgs e)
-        {
-            LinkButton button = (LinkButton)sender;
-            int idProdotto = Convert.ToInt32(button.CommandArgument);
-
-            Connection.ConnectionString();
-            SqlConnection conn = Connection.ConnectionString();
-            try
-            {
-                conn.Open();
-                string query = $"DELETE FROM Prodotti WHERE idProdotto = {idProdotto}";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                Response.Redirect(Request.RawUrl);
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Error: ");
-                Response.Write(ex.Message);
-            }
-            finally
-            {
+                // Chiude la connessione al database
                 conn.Close();
             }
         }

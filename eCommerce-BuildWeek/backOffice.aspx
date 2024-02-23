@@ -42,25 +42,6 @@
 
         
 
-        <!-- Modal -->
-        <!--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p runat="server" id="scriviqualcosa"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <asp:Button ID="Rimuovi" data-bs-toggle="modal" data-bs-target="#staticBackdrop" runat="server" OnClick="Rimuovi_Click" type="button" class="btn btn-primary" Text="Elimina" CommandArgument='' />
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
         <!-- contenuto tabella -->
         <asp:Repeater ID="backOfficeRepeater" runat="server">
             <ItemTemplate>
@@ -91,12 +72,7 @@
                             </svg>
                         </a>
 
-<%--                        <asp:LinkButton ID="Button1" runat="server" OnClick="Rimuovi_Click" Text="Rimuovi" CssClass="btn btn-sm btn-danger pb-2 mb-1" CommandArgument='<%# Eval("idProdotto") %>'>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
-                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </asp:LinkButton>--%>
+
                         
                     </div>
 
