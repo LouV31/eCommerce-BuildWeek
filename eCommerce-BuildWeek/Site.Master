@@ -113,7 +113,16 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <footer class="d-flex justify-content-between small border-top py-2">
+                <div>
+                    <p class="small">&copy; <%: DateTime.Now.Year %> - BlackMarket Store</p>
+                </div>
+                <div class="text-end small text-light text-opacity-50">
+                    <address class="m-0"><span class="fw-semibold">BlackMarket Store</span>, Piazza la Bomba snc, 00000 Universe</address>
+                    <address class="m-0">mail: info@blackmarketstore.com</address>
+                </div>
+                
+                
             </footer>
         </div>
     </form>
