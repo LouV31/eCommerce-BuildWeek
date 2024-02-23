@@ -12,8 +12,6 @@ namespace eCommerce_BuildWeek
         {
             if (!IsPostBack)
             {
-
-
                 List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
                 if (carrello != null && carrello.Count > 0)
                 {
@@ -27,7 +25,6 @@ namespace eCommerce_BuildWeek
                     int numeroTotaleArticoli = carrello.Sum(p => p.QuantityInCart);
                     if (carrello.Count >= 1)
                     {
-
                         procediOrdine.Visible = true;
                     }
                     if (numeroTotaleArticoli > 1)
@@ -86,6 +83,14 @@ namespace eCommerce_BuildWeek
             List<Prodotti> carrello = (List<Prodotti>)Session["carrello"];
             int idUtente = Convert.ToInt32(Session["idUtente"]);
             SqlConnection conn = Connection.ConnectionString();
+
+            //controllo login x ordine
+
+            if (Session["nome"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             if (idUtente != 0)
             {
                 string indirizzo = Session["indirizzo"].ToString();
@@ -93,7 +98,8 @@ namespace eCommerce_BuildWeek
                 try
                 {
                     conn.Open();
-                    string query = "Insert into Ordini (FK_IdUtente, Indirizzo_Spedizione, Totale) VALUES (@idUtente, @indirizzo, @totale)";
+                    string query =
+                        "Insert into Ordini (FK_IdUtente, Indirizzo_Spedizione, Totale) VALUES (@idUtente, @indirizzo, @totale)";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@idUtente", idUtente);
                     cmd.Parameters.AddWithValue("@indirizzo", indirizzo);
@@ -103,16 +109,19 @@ namespace eCommerce_BuildWeek
                     try
                     {
                         conn2.Open();
-                        string idOrdineQuery = $"SELECT idOrdine FROM Ordini WHERE FK_IdUtente = {idUtente} ORDER BY idOrdine DESC";
+                        string idOrdineQuery =
+                            $"SELECT idOrdine FROM Ordini WHERE FK_IdUtente = {idUtente} ORDER BY idOrdine DESC";
                         SqlCommand getIdOrdineCmd = new SqlCommand(idOrdineQuery, conn2);
                         int idOrdine = (int)getIdOrdineCmd.ExecuteScalar();
                         foreach (Prodotti prodotto in carrello)
                         {
-                            string query2 = $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto, Quantita) VALUES ( {idOrdine}, {prodotto.Id}, {prodotto.QuantityInCart})";
+                            string query2 =
+                                $"INSERT INTO DettagliOrdini (FK_IdOrdine, FK_IdProdotto, Quantita) VALUES ( {idOrdine}, {prodotto.Id}, {prodotto.QuantityInCart})";
                             SqlCommand cmd2 = new SqlCommand(query2, conn2);
                             cmd2.ExecuteNonQuery();
 
-                            string query3 = $"UPDATE Prodotti SET Unita = Unita - {prodotto.QuantityInCart} WHERE idProdotto = {prodotto.Id}";
+                            string query3 =
+                                $"UPDATE Prodotti SET Unita = Unita - {prodotto.QuantityInCart} WHERE idProdotto = {prodotto.Id}";
                             SqlCommand cmd3 = new SqlCommand(query3, conn2);
                             cmd3.ExecuteNonQuery();
                         }
@@ -141,7 +150,6 @@ namespace eCommerce_BuildWeek
             }
         }
 
-
         protected void incrementaQuantita_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -167,6 +175,5 @@ namespace eCommerce_BuildWeek
             }
             Response.Redirect(Request.RawUrl);
         }
-
     }
 }
